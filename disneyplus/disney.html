@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling Disney+</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Links para exportar a Excel -->
+    <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+</head>
+<body>  
+    <header>
+        <img src="./Disney.png" alt="Disney Logo" class="head-img">
+       
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <h2>Scheduling</h2>
+            <div class="divider"></div>
+            <ul id="menu-options" class="menu-options">
+                <li data-option="week">Week</li>
+                <li data-option="daily">Daily</li>
+                <li data-option="comparative">Comparative</li>
+                <li class="active" data-option="disney">Disney+</li>
+            </ul>
+            <h2>Tasks</h2>
+            <div class="divider"></div>
+            <ul id="task-options" class="menu-options">
+                <li data-option="ingest">Ingest Tmk</li>
+                <li data-option="ingest">Ingest Edm</li>
+                <li data-option="recording">Recording</li>
+            </ul>
+            <h2>Administrator</h2>
+<div class="divider"></div>
+<ul id="admin-options" class="menu-options">
+    <li data-option="recording">Recording
+        <ul class="submenu">
+            <li data-option="inputs">Inputs</li>
+            <li data-option="equipment">Equipment</li>
+            <li data-option="operator">Operator</li>
+        </ul>
+    </li>
+    <li data-option="ingest-tmk">Ingest Tmk
+        <!-- Submenú adicional de Ingest Tmk -->
+        <ul class="submenu">
+            <li data-option="grouping-type">Grouping type</li>
+        </ul>
+    </li>
+</ul>
+            
+        </nav>
+    </div>
+    
+
+    <main>
+        <div class="breadcrumb"> <button id="toggle-menu" onclick="toggleSidebar()"><</button>
+            <span>Scheduling</span> >
+            <a href="index.html">Disney+</a>
+            <button id="logout-button" class="logout-button">Log out</button>
+        </div>
+
+        <div class="search-section">
+            <div class="search-bar">
+                <h3>Search</h3>
+                <label for="date-from" class="network">Start date: </label>
+                <input type="date" id="date-from">
+
+                <label for="network">Feeds: </label>
+                <select id="network" class="network">
+                    <option value="select">Select options</option>
+                    <option value="0">All items are selected</option>
+                    <option value="1">706</option>
+                    <option value="2">315</option>
+                </select>
+
+                <label for="feed" class="network">Network:</label>
+                <select id="feed">
+                    <option value="select">Select options</option>
+                    <option value="0">All items are selected</option>
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                </select>
+
+                <button class="apply-button"><a class="link" href="index.html">Apply</a></button>
+            </div>
+        </div>
+        </br>
+        <div class="disneyplus">
+            <h3>Disney+
+                <button id="btnExportar" class="download">Download Excel <i class="material-icons">vertical_align_bottom</i></button>
+                <button class="reloadData" onclick="document.location.reload();">Reload data <i class="material-icons">loop</i></button>
+                <button class="config-button" onclick="toggleConfigPanel()"><i style='font-size:20px' class='fas'>&#xf0ad;</i></button>
+            </h3>
+
+            
+        </div>
+
+        <div class="filters-section">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="recording">Table</button>
+                <button class="tab-button" data-tab="schedule-tab">Schedule</a></button>
+            </div>
+        </div>
+        <div class="config-panel" id="configPanel">
+            <h3>Edit columns</h3>
+            <br/>
+            <div class="draggable" draggable="true" data-col="0">
+                Net <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="1">
+                Feed <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="2">
+                Show Code <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="3">
+                Program <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="4">
+                Title <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="5">
+                Episode Title <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="6">
+                DOW <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="7">
+                Start Time <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="8">
+                End Date <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="9">
+                End Time <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="10">
+                Duration <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="11">
+                LTSA <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="12">
+                Status <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <button class="save-button" onclick="saveConfiguration()">Save</button>
+        </div>
+
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th>Net</th>
+                    <th>Feed</th>
+                    <th>Show code</th>
+                    <th>Program</th>
+                    <th>Title</th>
+                    <th>Episode Title</th>
+                    <th>DOW</th>
+                    <th>Start Date</th>
+                    <th>Start Time</th>
+                    <th>End Date</th>
+                    <th>End Time</th>
+                    <th>Duration</th>
+                    <th>LTSA</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Más filas pueden añadirse aquí -->
+            </tbody>
+        </table>
+
+        <div class="nodata">
+            <h4>Generate a search to see the data</h4>
+        </div>
+    </main>
+    <script type="module" src="../logout.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
