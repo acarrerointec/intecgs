@@ -1,5 +1,7 @@
+let logCounter = 1;
 
-        document.getElementById('save-button').addEventListener('click', function() {
+document.getElementById('save-button').addEventListener('click', function() {
+            
             // Capturando los valores de los inputs
             const coordinador = document.getElementById('coordinador').value;
             const operador = document.getElementById('operador').value;
@@ -13,33 +15,38 @@
                     const formattedDate = now.toLocaleDateString();
                     const formattedTime = now.toLocaleTimeString();
 
-
+        
             // Verificar que todos los campos estén completos
             if (coordinador && operador && motivo && horaAprox && comentarios) {
                 // Crear una nueva fila
                 const tableBody = document.getElementById('log-body');
-                const newRow = tableBody.insertRow();  // Crea una nueva fila
 
+                const newRow = tableBody.insertRow();  // Crea una nueva fila
+                
                 // Agregar las celdas con la información
-                newRow.insertCell(0).textContent = new Date().toLocaleDateString(); // Fecha actual
-                newRow.insertCell(1).textContent =  formattedTime;  // Hora
-                newRow.insertCell(2).textContent = 'user@diney.com';   // Operador
-                newRow.insertCell(3).textContent = `
+                newRow.insertCell(0).textContent = logCounter;
+                newRow.insertCell(1).textContent = new Date().toLocaleDateString(); // Fecha actual
+                newRow.insertCell(2).textContent =  formattedTime;  // Hora
+                newRow.insertCell(3).textContent = 'user@diney.com';   // Operador
+                
+                newRow.insertCell(4).textContent = `
                     Time: ${horaAprox}, 
                     Reason : ${motivo}, 
                     Coordinator: ${coordinador},
                     Operator: ${operador}
-        `;
+        `;          logCounter++;
 
 
-
+       
                 // Limpiar los campos de entrada después de guardar los datos
                 document.getElementById('coordinador').value = '';
                 document.getElementById('operador').value = '';
                 document.getElementById('motivo').value = '';
                 document.getElementById('hora-aproximada').value = '';
                 document.querySelector('textarea[name="comentarios"]').value = '';
+                
             } else {
                 alert("Por favor, complete todos los campos antes de guardar.");
             }
         });
+       

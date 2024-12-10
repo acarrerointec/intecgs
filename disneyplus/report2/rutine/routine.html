@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling Disney+</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <!-- links para exportar a excel -->
+     <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+     <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+     <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+</head>
+<body>  
+    
+
+
+    <main>
+        <div class="breadcrumb">
+            <span>Scheduling</span> >
+            <a HREF="/disneyplus/index.html">Disney+ </a>
+        </div>
+
+        <div class="search-section">
+            <div class="search-bar">
+    
+                <label for="date-from" class="network" ><strong>Start date:  </strong>2024-10-09</label>
+
+                <label for="time-from" class="network" ><strong>Start time:  </strong>2:00 AM</label>
+
+                <label for="network" class="network"><strong>Network: </strong>315</label>
+        
+                <label for="feed"><strong>Feed: </strong>A</label>
+              
+                <label for="duration" class="network"><strong>Duration:</strong> 01:00</label>
+              
+                <label for="program" class="network"><strong>Programa: </strong>SRMD</label>
+
+                <label for="title" class="network"><strong>Title: </strong>12464 - SportsCenter </label>
+                
+            </div>
+        </div>
+
+        </div>
+        <div class="filters-section">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="recording">Table</button>
+    
+                <button class="tab-button" data-tab="schedule-tab"><a class="link" href="#"></a>Schedule</button>
+                
+            
+                <button id="btnExportar" class="download">BXF Playlist <i class="material-icons"></i></button>
+                <button class="reloadData" onclick="document.location.reload();">LST Playlist <i class="material-icons"></i></button>
+                <button class="reloadData" onclick="document.location.reload();">Download CSV<i class="material-icons">vertical_align_bottom</i></button>
+            </div>
+    
+        </div>
+       <table class="main-table">
+            <thead>
+                <div class="containerRotine">
+                    <h3 >
+                        <div class="time-container">Tanda: <span id="tanda">00:12:30</span></div>  
+                        <div class="time-container">Artistica: <span id="artistica">00:00:15</span></div> 
+                        <div class="time-container">Program: <span id="programa">00:00:00</span></div>
+                    </h3 >
+
+                    <table class="routine-table">
+                      <thead>
+                        <tr>
+                          <th>Cut</th>
+                          <th>Order</th>
+                          <th>Avail</th>
+                          <th>TP</th>
+                          <th>Duration</th>
+                          <th>Material</th>
+                          <th>Name</th>
+                          <th>Note</th>
+                          <th>Client</th>
+                          <th>Category</th>
+                          <th>Brand</th>
+                          <th>SR</th>
+                          <th>OP</th>
+                          <th>NCS POB</th>
+                          <th>View</th>
+                          <th>Spot</th>
+                          <th>NCS UT ID</th>
+                          <th>NCS EP</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- Fila principal -->
+                        <tr class="clickable-row" data-target="#extra-info-1">
+                          <td class="col1">1 <i class="material-icons toggle-icon" style="font-size:25px">arrow_drop_down</i></td>
+                          <td class="col1"></td>
+                          <td  class="col1"></td>
+                          <td  class="col1"></td>
+                          <td  class="col1"></td>
+                          <td  class="col1"></td>
+                          <td  class="col1">TANDA - RE N*1 Duracion total 2M 30"</td>
+                          <td  class="col1"></td>
+                          <td  class="col1"></td>
+                          <td  class="col1"></td>
+                          <td  class="col1"></td>
+                          <td class="col1"></td>
+                          <td class="col1"></td>
+                          <td class="col1"></td>
+                          <td class="col1"></td>
+                          <td class="col1"></td>
+                          <td class="col1"></td>
+                          <td class="col1"></td>
+                         
+                        </tr>
+                    
+                        <!-- Fila secundaria oculta -->
+                        <tr id="extra-info-1" class="extra-info-row">
+                          <td colspan="18">
+                            <table class="extra-info-table">
+                              <tr>
+                                <td class="col2" >1</td>
+                                <td class="col2" >1</td>
+                                <td class="col2">NRP</td>
+                                <td class="col2">PF</td>
+                                <td  class="col2">20</td>
+                                <td  class="col2">425712</td>
+                                <td class="col2" >UEFA 29/9 16:30 R.SOC VS R.SOC</td>
+                                <td class="col2"></td>
+                                <td class="col2"></td>
+                                <td class="col2"></td>
+                                <td class="col2"></td>
+                          <td class="col2">ROS: 24 HOURS</td>
+                          <td class="col2"></td>
+                          <td class="col2"></td>
+                          <td class="col2"></td>
+                          
+                          <td class="col2">1936565</td>
+                          <td class="col2">Sin Procesar</td>
+                          <td class="col2">PA429724-1</td>
+                        </tr>
+                    
+                        <td class="col2">1</td>
+                        <td class="col2">2</td>
+                        <td class="col2">NRP</td>
+                        <td class="col2">PF</td>
+                        <td class="col2">20</td>
+                        <td class="col2">429679</td>
+                        <td class="col2">CARABAO CUP 24/9 19:50 MAN/WAT</td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2">ROS: 24 HOURS</td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2">1936565</td>
+                        <td class="col2">Sin Procesar</td>
+                        <td class="col2">PA429679-1</td>
+                        </tr>
+
+                        <td class="col2">1</td>
+                        <td class="col2">3</td>
+                        <td class="col2">NRP</td>
+                        <td class="col2">PF</td>
+                        <td class="col2">20</td>
+                        <td class="col2">429656</td>
+                        <td class="col2">SUDAMERICANA 25/9 19:25 INDEPENDIENTE/ANUS</td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2">ROS: 24 HOURS</td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2">2677456</td>
+                        <td class="col2">1936565</td>
+                        <td class="col2">Sin Procesar</td>
+                        <td class="col2"> PA429656-1</td>
+                        </tr>
+
+                        <td class="col2">1</td>
+                        <td class="col2">4</td>
+                        <td class="col2">NRP</td>
+                        <td class="col2">PF</td>
+                        <td class="col2">20</td>
+                        <td class="col2">426643</td>
+                        <td class="col2">UE CHILE 19:30 BAR/GATE</td>
+                        <td class="col2"></td>
+                        <td class="col2"></td><td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2">ROS: 24 HOURS</td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2">2677450</td>
+                        <td class="col2">1936565</td>
+                        <td class="col2">Sin Procesar</td>
+                        <td class="col2">PA426643-1</td>
+                        </tr>
+
+                        <td class="col2">1</td>
+                        <td class="col2">5</td>
+                        <td class="col2">NRP</td>
+                        <td class="col2">PF</td>
+                        <td class="col2">20</td>
+                        <td class="col2">429648</td>
+                        <td class="col2">PREMIER 23/09 15:50 WHU/NEW</td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2">ROS: 24 HOURS</td>
+                        <td class="col2"></td>
+                        <td class="col2"></td>
+                        <td class="col2">2677450</td>
+                        <td class="col2">1936565</td>
+                        <td class="col2">Sin Procesar</td>
+                        <td class="col2">PA429648-1</td>
+                        </tr>
+                    
+                    </table>
+                    </td>
+                    </tr>
+                    
+                    <!-- Segunda fila principal -->
+                    <tr class="clickable-row" data-target="#extra-info-2">
+                      <td>2 <i class="material-icons toggle-icon" style="font-size:25px">arrow_drop_down</i></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>EMITIR POST 8AM - RE N*2 Duracion total 2M 30"</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    
+               <!-- Fila secundaria oculta -->
+               <tr id="extra-info-2" class="extra-info-row">
+                <td colspan="18">
+                  <table class="extra-info-table">
+                    <tr>
+                      <td class="col2" >1</td>
+                      <td class="col2" >1</td>
+                      <td class="col2">NRP</td>
+                      <td class="col2">PF</td>
+                      <td  class="col2">20</td>
+                      <td  class="col2">425712</td>
+                      <td class="col2" >UEFA 29/9 16:30 R.SOC VS R.SOC</td>
+                      <td class="col2"></td>
+                      <td class="col2"></td>
+                      <td class="col2"></td>
+                      <td class="col2"></td>
+                <td class="col2">ROS: 24 HOURS</td>
+                <td class="col2"></td>
+                <td class="col2"></td>
+                <td class="col2"></td>
+                
+                <td class="col2">1936565</td>
+                <td class="col2">Sin Procesar</td>
+                <td class="col2">PA429724-1</td>
+              </tr>
+          
+              <td class="col2">1</td>
+              <td class="col2">2</td>
+              <td class="col2">NRP</td>
+              <td class="col2">PF</td>
+              <td class="col2">20</td>
+              <td class="col2">429679</td>
+              <td class="col2">CARABAO CUP 24/9 19:50 MAN/WAT</td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2">ROS: 24 HOURS</td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2">1936565</td>
+              <td class="col2">Sin Procesar</td>
+              <td class="col2">PA429679-1</td>
+              </tr>
+
+              <td class="col2">1</td>
+              <td class="col2">3</td>
+              <td class="col2">NRP</td>
+              <td class="col2">PF</td>
+              <td class="col2">20</td>
+              <td class="col2">429656</td>
+              <td class="col2">SUDAMERICANA 25/9 19:25 INDEPENDIENTE/ANUS</td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2">ROS: 24 HOURS</td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2">2677456</td>
+              <td class="col2">1936565</td>
+              <td class="col2">Sin Procesar</td>
+              <td class="col2"> PA429656-1</td>
+              </tr>
+
+              <td class="col2">1</td>
+              <td class="col2">4</td>
+              <td class="col2">NRP</td>
+              <td class="col2">PF</td>
+              <td class="col2">20</td>
+              <td class="col2">426643</td>
+              <td class="col2">UE CHILE 19:30 BAR/GATE</td>
+              <td class="col2"></td>
+              <td class="col2"></td><td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2">ROS: 24 HOURS</td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2">2677450</td>
+              <td class="col2">1936565</td>
+              <td class="col2">Sin Procesar</td>
+              <td class="col2">PA426643-1</td>
+              </tr>
+
+              <td class="col2">1</td>
+              <td class="col2">5</td>
+              <td class="col2">NRP</td>
+              <td class="col2">PF</td>
+              <td class="col2">20</td>
+              <td class="col2">429648</td>
+              <td class="col2">PREMIER 23/09 15:50 WHU/NEW</td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2">ROS: 24 HOURS</td>
+              <td class="col2"></td>
+              <td class="col2"></td>
+              <td class="col2">2677450</td>
+              <td class="col2">1936565</td>
+              <td class="col2">Sin Procesar</td>
+              <td class="col2">PA429648-1</td>
+              </tr>
+            </table>
+        
+                    
+            <tr class="clickable-row" data-target="#extra-info-3">
+                      <td>3<i class="material-icons" style="font-size:25px">arrow_drop_down</i></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>EMITIR POST 8 AM - RE N*3 Duracion total 2M 30"</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+
+
+ <!-- Fila secundaria oculta -->
+ <tr id="extra-info-3" class="extra-info-row">
+  <td colspan="18">
+    <table class="extra-info-table">
+      <tr>
+        <td class="col2" >1</td>
+        <td class="col2" >1</td>
+        <td class="col2">NRP</td>
+        <td class="col2">PF</td>
+        <td  class="col2">20</td>
+        <td  class="col2">425712</td>
+        <td class="col2" >UEFA 29/9 16:30 R.SOC VS R.SOC</td>
+        <td class="col2"></td>
+        <td class="col2"></td>
+        <td class="col2"></td>
+        <td class="col2"></td>
+  <td class="col2">ROS: 24 HOURS</td>
+  <td class="col2"></td>
+  <td class="col2"></td>
+  <td class="col2"></td>
+  
+  <td class="col2">1936565</td>
+  <td class="col2">Sin Procesar</td>
+  <td class="col2">PA429724-1</td>
+</tr>
+
+<td class="col2">1</td>
+<td class="col2">2</td>
+<td class="col2">NRP</td>
+<td class="col2">PF</td>
+<td class="col2">20</td>
+<td class="col2">429679</td>
+<td class="col2">CARABAO CUP 24/9 19:50 MAN/WAT</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">ROS: 24 HOURS</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">1936565</td>
+<td class="col2">Sin Procesar</td>
+<td class="col2">PA429679-1</td>
+</tr>
+
+<td class="col2">1</td>
+<td class="col2">3</td>
+<td class="col2">NRP</td>
+<td class="col2">PF</td>
+<td class="col2">20</td>
+<td class="col2">429656</td>
+<td class="col2">SUDAMERICANA 25/9 19:25 INDEPENDIENTE/ANUS</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">ROS: 24 HOURS</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">2677456</td>
+<td class="col2">1936565</td>
+<td class="col2">Sin Procesar</td>
+<td class="col2"> PA429656-1</td>
+</tr>
+
+<td class="col2">1</td>
+<td class="col2">4</td>
+<td class="col2">NRP</td>
+<td class="col2">PF</td>
+<td class="col2">20</td>
+<td class="col2">426643</td>
+<td class="col2">UE CHILE 19:30 BAR/GATE</td>
+<td class="col2"></td>
+<td class="col2"></td><td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">ROS: 24 HOURS</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">2677450</td>
+<td class="col2">1936565</td>
+<td class="col2">Sin Procesar</td>
+<td class="col2">PA426643-1</td>
+</tr>
+
+<td class="col2">1</td>
+<td class="col2">5</td>
+<td class="col2">NRP</td>
+<td class="col2">PF</td>
+<td class="col2">20</td>
+<td class="col2">429648</td>
+<td class="col2">PREMIER 23/09 15:50 WHU/NEW</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">ROS: 24 HOURS</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">2677450</td>
+<td class="col2">1936565</td>
+<td class="col2">Sin Procesar</td>
+<td class="col2">PA429648-1</td>
+</tr>
+</table>
+
+
+<tr class="clickable-row" data-target="#extra-info-4">
+                      <td>4<i class="material-icons" style="font-size:25px">arrow_drop_down</i></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>EMITIR POST 10 AM- RE N*4 Duracion total 2M 30"</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+ <!-- Fila secundaria oculta -->
+ <tr id="extra-info-4" class="extra-info-row">
+  <td colspan="18">
+    <table class="extra-info-table">
+      <tr>
+        <td class="col2" >1</td>
+        <td class="col2" >1</td>
+        <td class="col2">NRP</td>
+        <td class="col2">PF</td>
+        <td  class="col2">20</td>
+        <td  class="col2">425712</td>
+        <td class="col2" >UEFA 29/9 16:30 R.SOC VS R.SOC</td>
+        <td class="col2"></td>
+        <td class="col2"></td>
+        <td class="col2"></td>
+        <td class="col2"></td>
+  <td class="col2">ROS: 24 HOURS</td>
+  <td class="col2"></td>
+  <td class="col2"></td>
+  <td class="col2"></td>
+  
+  <td class="col2">1936565</td>
+  <td class="col2">Sin Procesar</td>
+  <td class="col2">PA429724-1</td>
+</tr>
+
+<td class="col2">1</td>
+<td class="col2">2</td>
+<td class="col2">NRP</td>
+<td class="col2">PF</td>
+<td class="col2">20</td>
+<td class="col2">429679</td>
+<td class="col2">CARABAO CUP 24/9 19:50 MAN/WAT</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">ROS: 24 HOURS</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">1936565</td>
+<td class="col2">Sin Procesar</td>
+<td class="col2">PA429679-1</td>
+</tr>
+
+<td class="col2">1</td>
+<td class="col2">3</td>
+<td class="col2">NRP</td>
+<td class="col2">PF</td>
+<td class="col2">20</td>
+<td class="col2">429656</td>
+<td class="col2">SUDAMERICANA 25/9 19:25 INDEPENDIENTE/ANUS</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">ROS: 24 HOURS</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">2677456</td>
+<td class="col2">1936565</td>
+<td class="col2">Sin Procesar</td>
+<td class="col2"> PA429656-1</td>
+</tr>
+
+<td class="col2">1</td>
+<td class="col2">4</td>
+<td class="col2">NRP</td>
+<td class="col2">PF</td>
+<td class="col2">20</td>
+<td class="col2">426643</td>
+<td class="col2">UE CHILE 19:30 BAR/GATE</td>
+<td class="col2"></td>
+<td class="col2"></td><td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">ROS: 24 HOURS</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">2677450</td>
+<td class="col2">1936565</td>
+<td class="col2">Sin Procesar</td>
+<td class="col2">PA426643-1</td>
+</tr>
+
+<td class="col2">1</td>
+<td class="col2">5</td>
+<td class="col2">NRP</td>
+<td class="col2">PF</td>
+<td class="col2">20</td>
+<td class="col2">429648</td>
+<td class="col2">PREMIER 23/09 15:50 WHU/NEW</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">ROS: 24 HOURS</td>
+<td class="col2"></td>
+<td class="col2"></td>
+<td class="col2">2677450</td>
+<td class="col2">1936565</td>
+<td class="col2">Sin Procesar</td>
+<td class="col2">PA429648-1</td>
+</tr>
+</table>
+
+
+
+                    <tr>
+                      <td>5<i class="material-icons" style="font-size:25px">arrow_drop_down</i></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>EMITIR POST 10 AM - RE N*5 Duracion total 2M 30"</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    
+                    <tr>
+                      <td>2001 <i class="material-icons" style="font-size:25px">arrow_drop_down</i></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>SOBREIMPRESOS - RF N*2001 Duracion total OM 15"</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    
+                    </tbody>
+                    </table>
+                   
+
+                    <div class="actionsRutine">
+                        <button type="button" class="cancelRutine"><a class="link" href="/disneyplus/index.html">Cancel</a></button>
+                        <button type="button" class="saveRutine" ><a class="link" href="/disneyplus/index.html">Save and Close</a></button>
+                    </div>
+            </tbody>
+        </table>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -14,6 +14,7 @@ font-family: Arial, sans-serif;
     /*align-items: center;*/
     justify-content: flex-start;
     height: auto;
+    background-color: #f4f4f4;
 }
 
 /* Imagen en la parte superior */
@@ -26,7 +27,7 @@ font-family: Arial, sans-serif;
 .header-img {
 
  
-    margin: auto;
+   margin: auto;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -34,16 +35,15 @@ font-family: Arial, sans-serif;
 }
 
 main {
-    margin-left: 159px;
+    margin-left: auto;
     width: 89%;
     max-width:auto;
     max-height: auto;
-    background-color: white;
-    /*padding: 1px;*/
+    background-color: #fff;
+    padding: 1px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /*overflow-y: auto;*/
     margin-right: auto;
-    
 }
 
 .sidebar {
@@ -52,26 +52,26 @@ main {
 
     /*left: 1;*/
     top: auto;
-    width: 160px;
-    height: 100%;
+    width: 151px;
+    height: 101%;
     background-color: #333;
-    padding: 5px;
+    padding: 30px;
     color: #fff;
     margin: auto;
     margin-top: 51.2px;
-    padding: auto;
+    padding: 20px;
     
 }
 
 .sidebar nav {
    
-    margin-top: 40px;
+    margin-top:auto;
 }
 
 .sidebar h2 {
  
-    font-size: 15px;
-    margin-bottom: 15px;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 .sidebar ul {
@@ -82,10 +82,10 @@ main {
 
 .sidebar li {
 
-    padding: 2px;
+    padding: 10px;
     color: #ddd;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 11px;
     margin-bottom: 15px;
 
 }
@@ -93,34 +93,6 @@ main {
 .sidebar li.active, .sidebar li:hover {
     background-color: #2986CC;
     color: white;
-}
-
-.menu-options li {
-    margin-bottom: 10px; /* Espacio entre opciones */
-}
-
-/* Ocultar el menú desplazándolo a la izquierda */
-.sidebar.hidden {
-    transform: translateX(-100%);
-}
-
-/* Estilo para el botón */
-#toggle-menu {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-
-}
-
-  /* Estilo para el submenú */
-  .submenu {
-    padding: 5px;
-    margin-left: 10px;  /* Sangría para distinguir el submenú */
-    /*list-style-type: disc; /* Estilo de viñeta opcional */
-   /* display: none; /* Ocultar el submenú inicialmente */
 }
 
 .breadcrumb {
@@ -137,15 +109,23 @@ main {
 
 h3{
 
-    margin-right: 1px;
-    margin-left: 14px;
-    display: flex;
+
+        font-size: 20px;
+        text-align: left;
+        background-color: white;
+        color: #2986CC;
+        display: auto;
+        padding: auto;
+        border: auto solid #ddd;
+        margin: 10px;
+        flex:auto;
+        justify-content: space-around;
 
 }
 
 .search-section {
 
-    background-color:  #f9f9f9;
+    background-color: #f5f5f5;
     padding:1%;
     border-bottom: 1px solid #ccc;
     margin-left: auto;
@@ -154,21 +134,16 @@ h3{
 }
 
 .search-bar {
-
+    margin-left: 1px;
     display: flex;
     align-items: center;
-    margin: 1px 5px;
-}
-
-.search-bar input[type="date"], .search-bar input[type="feed"] {
-    margin-left: 10px;
-    margin-right: 10px;
+    flex: auto;
+    
 }
 
 .apply-button {
 
-    font-size : 16px;
-    padding: 8px 15px;
+    padding: 5px 15px;
     background-color: #2986CC;
     color: white;
     border: none;
@@ -181,43 +156,37 @@ h3{
 
 /* Ajustar el estilo de las tablas */
 .main-table {
-
     width: 100%;
     border-collapse: collapse;
     overflow-x: auto;
     font-size: auto;
-    border: auto solid;
-    background-color: white;
-    
-   
+    border: 2px solid white
 }
 
 .main-table th, .main-table td {
-
    font-size: 10px;
     padding: 10px;
-    border: 1px solid white;
+    border: 1px solid #ddd;
     text-align: left;
-
+    
 }
 
 .main-table th {
-
+    background-color: #f2f2f2;
     text-align: left;
     /***/
     margin: 10px;
     background-color: #ddd;
     font-size: 14px;
     color: #2986CC;
-   /* border-bottom: 2px solid #2986CC;*/
-    
+    border-bottom: 2px solid #2986CC;
+    background-color: white;
     display: auto;
     text-align: auto;
     flex:auto;
     border-top: #f2f2f2;
     border-left: #f2f2f2;
     border-right: #f2f2f2;
-    background-color: white;
 }
 
 .main-table tr:nth-child(even) {
@@ -226,11 +195,8 @@ h3{
 }
 
 .main-table tr:hover {
-    
     background-color:#2986CC;
-
 }
-
 
 .filters-section {
     padding: 20px;
@@ -267,13 +233,13 @@ h3{
 .filters-content label {
     margin-right: 10px;
 }
-
+/*
 .filters-content select, .filters-content input[type="date"] {
     padding: 5px;
     margin-right: 10px;
 }
-
-.filters-content {
+*/
+.filters-content .apply-button {
     padding: 8px 15px;
     background-color: #2986CC;
     color: white;
@@ -314,9 +280,152 @@ h3{
     cursor : pointer;
     margin-left: auto;
 
-}
-.reloadData {
+    }
+
+    .reloadData {
    
+    background-color :#2986CC;
+    color : white;
+    padding : 10px 20px;
+    margin : 2px;
+    font-size : 11px;
+    text-align : center;
+    border : none;
+    border-radius : 8px;
+    cursor : pointer;
+    }
+
+
+        /* Estilos para el switch */
+ .switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: red;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+
+.actionsRutine {
+    text-align: center;
+    background-color: #ddd;
+}
+
+.cancelRutine {
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #a9a9a9;
+    color: white;
+    
+}
+
+.saveRutine {
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color:#2986CC;
+    color: white;
+  
+}
+.link{
+    color: white;
+    text-decoration: none;
+}
+
+
+/**** report3*/
+.listReport button {
+
+    cursor: pointer;
+    padding: 10px;
+    font-size: auto;
+    align-items: center;
+}
+
+
+/****
+Cuadros de textos*/
+
+input, textarea, select {
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type= "text"] {
+    width: 100%;
+}
+
+input[type="time"] {
+    width: 8%;
+}
+
+.registroReport textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+.input-group {
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.network{
+    margin: 10px;
+}
+
+
+/* Estilos para el menú lateral */
+
+.config-button {
+
+
     background-color :#2986CC;
     color : white;
     padding : 10px 20px;
@@ -328,127 +437,39 @@ h3{
     cursor : pointer;
 }
 
-.network{
-    margin: 10px;
-}
-
-/* Divider style */
-.divider {
-    border-bottom: 2px solid white;
-    margin: 5px 0;
-}
-
-.nodata{
-
-    margin: 20px;
-    text-align: center;
-    color: #555;
-}
-
-.context-menu{
-
-    font-size: 12px;
-    display: none;
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    z-index: 2000px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    list-style-type: none;
-
-}
-
-.contex-menu ul {
-
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.context-menu li {
-    list-style-type: none;
-    padding: 8px 12px;
-    cursor: pointer;
-   
-
-}
-
-.context-menu li:hover {
-    list-style-type: none;
-    background-color: #ccc;
-}
-
-.context-menu ul ul {
-
-    list-style-type: none;
-    background-color: white;
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-}
-
-.context-menu li:hover > ul {
-
-    display: block;
-    list-style-type: none;
-}
-
-
 /* Estilos para el menú lateral */
 
-    .config-button {
+th {
+    cursor: move; /* Cambiar el cursor para indicar que las columnas son movibles */
+}
 
 
-        background-color :#2986CC;
-        color : white;
-        padding : 10px 20px;
-        margin : 2px;
-        font-size : 11px;
-        text-align : center;
-        border : none;
-        border-radius : 8px;
-        cursor : pointer;
-    }
+.config-panel {
 
-    /* Estilos para el menú lateral */
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: auto;
+    background-color: #f4f4f4;
+    border-left: 1px solid #ddd;
+    transition: right 0.3s ease;
+    padding: 1px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    
+    
+}
+.config-panel.open {
+    right: 0;
+}
 
-    th {
-        cursor: move; /* Cambiar el cursor para indicar que las columnas son movibles */
-    }
+.config-panel h3 {
+    margin-top: 10px;
+}
 
-
-    .config-panel {
-
-        position: fixed;
-        right: -300px;
-        top: 0;
-        width: 300px;
-        height: auto;
-        background-color: #f4f4f4;
-        border-left: 1px solid #ddd;
-        transition: right 0.3s ease;
-        padding: 10px;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-        
-    }
-    .config-panel.open {
-        right: 0;
-    }
-
-    .config-panel h3 {
-        margin-top: 10px;
-    }
-
-    .config-panel label {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-.link{
-
-    text-decoration: none;
-    color: white;
+.config-panel label {
+    display: block;
+    margin-bottom: 10px;
 }
 
 
@@ -477,6 +498,14 @@ h3{
     margin-left: 8px;
 }
 
+
+.link{
+
+    text-decoration: none;
+    color: white;
+}
+
+
 .save-button {
     display: block;
     width: 90%;
@@ -493,22 +522,3 @@ h3{
 .save-button:hover {
     background-color: #2986CC;
 }
-
-.logout-button {
-    
-    background-color: #ccc;
-    color: white;
-    padding : 10px 20px;
-    margin : 2px;
-    font-size : 11px;
-    text-align : center;
-    border : none;
-    border-radius : 8px;
-    cursor : pointer;
-    margin-left: auto;
-
-  }
-  
-  .logout-button:hover {
-    background-color: #ec1a2b;
-  }

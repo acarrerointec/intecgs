@@ -1,0 +1,501 @@
+/* General Styles */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    justify-content: flex-start;
+    height: auto;
+    background-color: #f4f4f4;
+}
+
+/* Imagen en la parte superior */
+.header {
+   display: flex;
+   margin: auto;
+   margin-inline: auto;
+}
+
+.header-img {
+
+ 
+   margin: auto;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: last baseline;
+}
+
+main {
+    margin-left: 159px;
+    width: 89%;
+    max-width:auto;
+    max-height: auto;
+    background-color: #fff;
+    padding: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*overflow-y: auto;*/
+    margin-right: auto;
+}
+
+.sidebar {
+    
+    position: absolute;
+
+    /*left: 1;*/
+    top: auto;
+    width: 151px;
+    height: 101%;
+    background-color: #333;
+    padding: 30px;
+    color: #fff;
+    margin: auto;
+    margin-top: 51.2px;
+    padding: 20px;
+    
+}
+
+.sidebar nav {
+   
+    margin-top:auto;
+}
+
+.sidebar h2 {
+ 
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+
+    padding: 10px;
+    color: #ddd;
+    cursor: pointer;
+    font-size: 11px;
+    margin-bottom: 15px;
+
+}
+
+.sidebar li.active, .sidebar li:hover {
+    background-color: #2986CC;
+    color: white;
+}
+
+.breadcrumb {
+    
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.breadcrumb a {
+    color: #2986CC;
+    text-decoration: none;
+}
+
+h3{
+
+
+margin-right: 10px;
+margin-left: 0%;
+display: flex;
+}
+
+.search-section {
+
+    background-color: #f5f5f5;
+    padding:1%;
+    border-bottom: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: 15px;
+    
+ 
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: auto;
+    margin: 1px 1px;
+
+}
+
+.search-bar input[type="date"] {
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.network{
+    margin: 10px;
+
+}
+
+.apply-button {
+
+    padding: 5px 15px;
+    background-color: #2986CC;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    border-radius : 8px;
+    cursor : pointer;
+    margin-left: auto;
+}
+
+/* Ajustar el estilo de las tablas */
+.main-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    font-size: auto;
+    border: 2px solid white
+}
+
+.main-table th, .main-table td {
+   font-size: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    
+}
+
+.main-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+    /***/
+    margin: 10px;
+    background-color: #ddd;
+    font-size: 14px;
+    color: #2986CC;
+    border-bottom: 2px solid #2986CC;
+    background-color: white;
+    display: auto;
+    text-align: auto;
+    flex:auto;
+    border-top: #f2f2f2;
+    border-left: #f2f2f2;
+    border-right: #f2f2f2;
+}
+
+.main-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+
+}
+
+.main-table tr:hover {
+    background-color:#2986CC;
+}
+
+.filters-section {
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab-button {
+
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    border-top : none;
+    border-left : none;
+    border-right : none;
+    border-radius: 8%;
+}
+
+.tab-button.active {
+    background-color: #57a9e7b1;
+    color: black;
+    font-style: auto; 
+    border-bottom: 3px solid #2986CC;
+}
+
+.filters-content {
+    margin-top: 20px;
+}
+
+.filters-content label {
+    margin-right: 10px;
+}
+
+.filters-content select, .filters-content input[type="date"] {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.filters-content .apply-button {
+    padding: 8px 15px;
+    background-color: #2986CC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    
+}
+
+/* Message Development */
+#development-message {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    display: none; /* Hidden by default */
+    text-align: center;
+}
+
+#development-message p {
+    color: #555;
+    font-size: 18px;
+}
+
+/*botones especiales*/
+.download {
+
+
+    background-color :#2986CC;
+    color : white;
+    padding : 10px 20px;
+    margin : 2px;
+    font-size : 11px;
+    text-align : center;
+    border : none;
+    border-radius : 8px;
+    cursor : pointer;
+    margin-left: auto;
+
+    }
+
+    .reloadData {
+   
+    background-color :#2986CC;
+    color : white;
+    padding : 10px 20px;
+    margin : 2px;
+    font-size : 11px;
+    text-align : center;
+    border : none;
+    border-radius : 8px;
+    cursor : pointer;
+    }
+
+    
+.containerRotine {
+    width: 100%;
+   /* margin: auto;*/
+   /* background-color: #fff;*/
+    /*padding: auto;*/
+    /*border-radius: 5px;*/
+   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    display: auto;
+    border:5px solid #ddd;
+    flex:auto;
+    display: flex;
+}
+
+h3{
+    font-size: 20px;
+    text-align: left;
+    background-color: white;
+    color: #2986CC;
+    display: auto;
+    padding: auto;
+    border:auto solid #ddd;
+    margin: 10px;
+    flex:auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.actionsRutine {
+    text-align: center;
+    background-color: #ddd;
+}
+
+.cancelRutine {
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #a9a9a9;
+    color: white;
+    
+}
+
+.saveRutine {
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color:#2986CC;
+    color: white;
+  
+}
+
+.add-action {
+    background-color: #2986CC;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 16px;
+}
+.link{
+    color: white;
+    text-decoration: none;
+}
+
+actions_routine{
+    display: flex;
+    color: white;
+}
+.expan{
+    text-align: left;
+    background-color:#60c6eb;
+}
+.all{
+    background-color:#60c6eb; 
+}
+
+/***/
+
+
+/* Ajustar el estilo de las tablas **/
+
+.routine-table {
+    flex: auto;
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    font-size: auto;
+    border: 1px solid white
+}
+
+.routine-table th, .routine-table td {
+    font-size: 10px;
+   padding: auto;
+    border: 1px solid #ddd;
+    text-align: left;
+    
+}
+
+.routine-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+    margin: 10px;
+    background-color: #ddd;
+    font-size: 14px;
+    color: #2986CC;
+    border-bottom: 2px solid #2986CC;
+    background-color: white;
+    display: auto;
+    flex:auto;
+    
+}
+
+.routine-table tr:nth-child(even) {
+
+    background-color: #f9f9f9;
+
+}
+
+.routine-table tr:hover {
+
+    background-color: white;
+}
+
+/*** 
+tabla oculyta */
+
+.collapse {
+    
+   padding: 1rem;
+    margin-left: none;
+    margin-right: none;
+   
+
+}
+
+
+.extra-info-table {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-right: none;
+    margin-left: none;
+    
+  
+}
+.col1{
+    height: auto;
+    width: 50px;
+
+  }
+  .col2{
+    height: auto;
+    width: 50px;
+    font-size: auto;
+  }
+
+.extra-info-table th, .extra-info-table td {
+    
+    border: 1px solid #ccc;
+    padding: 1px;
+    text-align: left;
+    font-size: 10px;
+   
+}
+
+.extra-info-row {
+
+    background-color: #f9f9f9;
+}
+
+/*tabla*/
+.hidden-row {
+  display: flex;
+}
+
+.hidden-row.show {
+  display: table-row;
+}
+
+.toggle-icon {
+  cursor: pointer;
+}
+
+.extra-info-row {
+    display: none; /* Las filas extra están ocultas por defecto */
+  }
+  
+  .extra-info-row.show {
+    display: table-row; /* Se muestran cuando la clase "show" es añadida */
+  }
+  
+  .toggle-icon {
+    cursor: pointer; /* Hace que el ícono de la flecha sea clicable */
+  }
+
+  

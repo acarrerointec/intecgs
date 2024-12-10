@@ -1,4 +1,4 @@
-
+let logCounter = 1;
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('save-button').addEventListener('click', function() {
         // Obtener la fecha y hora actuales
@@ -14,12 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Crear una nueva fila para la tabla
         const newRow = document.createElement('tr');
         newRow.innerHTML = `
+            <td>${logCounter}</td>
             <td>${formattedDate}</td>
             <td>${formattedTime}</td>
             <td>user@disney.com</td>
             <td>Comments: ${comentarios}</td>
         `;
-
+            logCounter++;
         // Agregar la nueva fila al cuerpo de la tabla
         document.getElementById('log-body').appendChild(newRow);
 
@@ -27,41 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('textarea[name="comentarios"]').value = '';
 
         }else{
+
             alert("Por favor, complete todos los campos antes de guardar.");
         }
     });
 });
-
-/*
-
-    document.getElementById('save-button').addEventListener('click', function() {
-        // Capturando los valores de los inputs
-      
-        const comentarios = document.querySelector('textarea[name="comentarios"]').value;
-
-        // Verificar que todos los campos estén completos
-        if (comentarios) {
-            // Crear una nueva fila
-            const comentarios = document.querySelector('textarea[name="comentarios"]').value;
-
-        // Crear una nueva fila para la tabla
-        const newRow = document.createElement('tr');
-        newRow.innerHTML = `
-            <td>${formattedDate}</td>
-            <td>${formattedTime}</td>
-            <td>user@disney.com</td>
-            <td>Comentarios: ${comentarios}</td>
-        `;
-
-        // Agregar la nueva fila al cuerpo de la tabla
-        document.getElementById('log-body').appendChild(newRow);
-
-        // Limpiar los campos del formulario
-        document.querySelector('textarea[name="comentarios"]').value = '';
-        } else {
-            alert("Por favor, complete todos los campos antes de guardar.");
-        }
-    });
-
-
-*/

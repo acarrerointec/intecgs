@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling Disney+</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+     <!-- links para exportar a excel -->
+     <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+     <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+     <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+</head>
+<body>  
+
+    <main>
+        <div class="breadcrumb">
+            <span>Scheduling</span> >
+            <a href="/disneyplus/index.html">Disney+ </a>
+        </div>
+
+        <div class="search-section">
+            <div class="search-bar">
+    
+                <label for="date-from" class="network"><strong>Start date:</strong></label>
+                <input type="date" id="start" name="trip-start" value="2024-10-09" min="2018-01-01" max="2018-12-31"  disabled/>
+
+                <label for="network" class="network"><strong>Network: </strong>315</label>
+        
+                <label for="feed"><strong>Feed: </strong>A</label>
+              
+                <label for="duration" class="network"><strong>Duration:</strong> 01:00</label>
+              
+                <label for="program" class="network"><strong>Programa: </strong>SRMD</label>
+
+                <label for="title" class="network"><strong>Title: </strong>12464 - SportsCenter </label>
+
+            </div>
+        </div>
+
+        </div>
+        <div class="filters-section">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="recording">Table</button>
+                <button class="tab-button" data-tab="schedule-tab"><a class="link" href="#"></a>Schedule</button>
+                <button id="btnExportar" class="download">Download CSV <i class="material-icons">vertical_align_bottom</i></button>
+                <button  type="button" class="saveRutine"><a class="link" href="/disneyplus/index.html">Go back</a><i class="material-icons">subdirectory_arrow_left</i></button>
+                <button class="config-button" onclick="toggleConfigPanel()"><i style='font-size:20px' class='fas'>&#xf0ad;</i></button>
+            </div>
+    
+        </div>
+        <div class="config-panel" id="configPanel">
+            <h3>Edit columns</h3>
+            <br/>
+            <div class="draggable" draggable="true" data-col="0">
+                Cut <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="1">
+                Type <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="2">
+                Order <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="3">
+                Mat <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="4">
+                Name <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="5">
+                TP <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="6">
+                Duration Emi <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="7">
+                Time Emi <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="8">
+                Duration <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="9">
+                Status <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="10">
+                Client <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="11">
+                Brand <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="12">
+                NCS UT ID <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="13">
+                NCS POB <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <div class="draggable" draggable="true" data-col="14">
+                NCS POB <input type="checkbox" class="column-toggle" checked>
+            </div>
+            <button class="save-button" onclick="saveConfiguration()">Save</button>
+        </div>
+
+        
+        <h3>Spots Broadcasted</h3>
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th>Cut</th>
+                    <th>Type</th>
+                    <th>Order</th>
+                    <th>Mat</th>
+                    <th>Name</th>
+                    <th>TP</th>
+                    <th>Duration Emi</th>
+                    <th>Time Emi</th>
+                    <th>Duration</th>
+                    <th>Status</th>
+                    <th>Client</th>
+                    <th>Brand</th>
+                    <th>NCS UT ID</th>
+                    <th>NCS POB</th>
+                    <th>NCS PRB</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>RE</td>
+                    <td>1</td>
+                    <td>406654</td>
+                    <td>X KNOCKOUT BUATSI VS AZEEZ 3/2 16HS</td>
+                    <td>PF</td>
+                    <td>00:00:30</td>
+                    <td>04:35:08</td>
+                    <td>CONCILIADO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>RE</td>
+                    <td>2</td>
+                    <td>405498</td>
+                    <td>X NFL SUPEBOWL TEASER</td>
+                    <td>PG</td>
+                    <td>00:00:15</td>
+                    <td>04:35:38</td>
+                    <td>CONCILIADO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>RE</td>
+                    <td>3</td>
+                    <td>405498</td>
+                    <td>X LOS CABOS Y ACAPULCO</td>
+                    <td>PG</td>
+                    <td>00:00:30</td>
+                    <td>04:35:53</td>
+                    <td>CONCILIADO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>RE</td>
+                    <td>4</td>
+                    <td>406572</td>
+                    <td>X LIGA MX SAN LUIS VS CHIVAS 4/2 21:50HS</td>
+                    <td>PF</td>
+                    <td>00:00:30</td>
+                    <td>04:36:23</td>
+                    <td>CONCILIADO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>RE</td>
+                    <td>5</td>
+                    <td>406572</td>
+                    <td>X LIGA MX SAN LUIS VS CHIVAS 4/2 21:50HS</td>
+                    <td>PF</td>
+                    <td>00:00:30</td>
+                    <td>04:36:23</td>
+                    <td>CONCILIADO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>RE</td>
+                    <td>6</td>
+                    <td>406572</td>
+                    <td>X LIGA MX SAN LUIS VS CHIVAS 4/2 21:50HS</td>
+                    <td>PF</td>
+                    <td>00:00:30</td>
+                    <td>04:36:23</td>
+                    <td>CONCILIADO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>RE</td>
+                    <td>7</td>
+                    <td>406572</td>
+                    <td>X LIGA MX SAN LUIS VS CHIVAS 4/2 21:50HS</td>
+                    <td>PF</td>
+                    <td>00:00:30</td>
+                    <td>04:36:23</td>
+                    <td>CONCILIADO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>RE</td>
+                    <td>8</td>
+                    <td>406572</td>
+                    <td>X LIGA MX SAN LUIS VS CHIVAS 4/2 21:50HS</td>
+                    <td>PF</td>
+                    <td>00:00:30</td>
+                    <td>04:36:23</td>
+                    <td>CONCILIADO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>RE</td>
+                    <td>9</td>
+                    <td>406572</td>
+                    <td>X LIGA MX SAN LUIS VS CHIVAS 4/2 21:50HS</td>
+                    <td>PF</td>
+                    <td>00:00:30</td>
+                    <td>04:36:23</td>
+                    <td>CONCILIADO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>RE</td>
+                    <td>10</td>
+                    <td>406572</td>
+                    <td>X LIGA MX SAN LUIS VS CHIVAS 4/2 21:50HS</td>
+                    <td>PF</td>
+                    <td>00:00:30</td>
+                    <td>04:36:23</td>
+                    <td>CONCILIADO</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <td>2</td>
+                <td>RE</td>
+                <td>1</td>
+                <td>406572</td>
+                <td>X LIGA MX SAN LUIS VS CHIVAS 4/2 21:50HS</td>
+                <td>PF</td>
+                <td>00:00:30</td>
+                <td>04:36:23</td>
+                <td>CONCILIADO</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tr>
+        <td>2</td>
+        <td>RE</td>
+        <td>2</td>
+        <td>406572</td>
+        <td>X LIGA MX SAN LUIS VS CHIVAS 4/2 21:50HS</td>
+        <td>PF</td>
+        <td>00:00:30</td>
+        <td>04:36:23</td>
+        <td>CONCILIADO</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+    
+    </tr>
+            </tbody>
+        </table>
+
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
