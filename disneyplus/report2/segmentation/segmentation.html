@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling Disney+</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+     <!-- links para exportar a excel -->
+     <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+     <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+     <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+</head>
+<body>  
+
+    <main>
+        <div class="breadcrumb">
+            <span>Scheduling</span> >
+            <a href="/disneyplus/index.html">Disney+ </a>
+        </div>
+
+        <div class="search-section">
+            <div class="search-bar">
+    
+                <label for="date-from" class="network"><strong>Start date:</strong></label>
+                <input type="date" id="start" name="trip-start" value="2024-10-09" min="2018-01-01" max="2018-12-31"  disabled/>
+
+                <label for="network" class="network"><strong>Network: </strong>315</label>
+        
+                <label for="feed"><strong>Feed: </strong>A</label>
+              
+                <label for="duration" class="network"><strong>Duration:</strong> 01:00</label>
+              
+                <label for="program" class="network"><strong>Programa: </strong>SRMD</label>
+
+                <label for="title" class="network"><strong>Title: </strong>12464 - SportsCenter </label>
+
+            </div>
+        </div>
+
+        </div>
+        <div class="filters-section">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="recording">Table</button>
+                <button class="tab-button" data-tab="schedule-tab"><a class="link" href="#"></a>Schedule</button>
+                <button id="btnExportar" class="download">Download CSV <i class="material-icons">vertical_align_bottom</i></button>
+                <button  type="button" class="saveRutine"><a class="link" href="/disneyplus/index.html">Go back</a><i class="material-icons">subdirectory_arrow_left</i></button>
+                <button class="config-button" onclick="toggleConfigPanel()"><i style='font-size:20px' class='fas'>&#xf0ad;</i></button>
+            </div>
+    
+        </div>
+  
+        
+        <h3>Segementation</h3>
+        <div class="media-interface">
+            <div class="media-selection">
+              <label for="media">Media:</label>
+              <select id="media" name="media">
+                <option value="">Select options</option>
+              </select>
+            </div>
+            <div class="details">
+              <p>ID: -</p>
+              <p>Detail: -</p>
+              <p>Observations: -</p>
+              <p>Registration date: -</p>
+              <p>Duration: -</p>
+              <p>Frame rate: -</p>
+              <p>Origin media: -</p>
+              <p>Box number: -</p>
+              <p>Start time: -</p>
+              <p>Programming: <strong>NO</strong></p>
+              <p>Version: <strong>NO</strong></p>
+            </div>
+            <div class="program-blocks">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Block</th>
+                    <th>TC IN</th>
+                    <th>TC OUT</th>
+                    <th>Duration</th>
+                    <th>House ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Rows will be added dynamically -->
+                </tbody>
+              </table>
+              <div class="duration-total">
+                <p>Duration total: 0</p>
+              </div>
+            </div>
+            <div class="actions">
+              <button id="newMedia">New media</button>
+              <button id="editMedia">Edit media</button>
+              <button id="deleteMedia">Delete media</button>
+            </div>
+        </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
