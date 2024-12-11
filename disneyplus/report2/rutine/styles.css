@@ -35,7 +35,7 @@ font-family: Arial, sans-serif;
 }
 
 main {
-    margin-left: 159px;
+    margin-left: auto;
     width: 89%;
     max-width:auto;
     max-height: auto;

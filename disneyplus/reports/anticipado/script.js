@@ -30,8 +30,8 @@ document.getElementById('save-button').addEventListener('click', function() {
                 newRow.insertCell(3).textContent = 'user@diney.com';   // Operador
                 
                 newRow.insertCell(4).textContent = `
-                    Time: ${horaAprox}, 
-                    Reason : ${motivo}, 
+                    Time: ${horaAprox},
+                    Reason: ${motivo}, 
                     Coordinator: ${coordinador},
                     Operator: ${operador}
         `;          logCounter++;
