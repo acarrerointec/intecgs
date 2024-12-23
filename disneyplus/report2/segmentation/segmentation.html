@@ -45,8 +45,7 @@
         </div>
         <div class="filters-section">
             <div class="tabs">
-                <button class="tab-button active" data-tab="recording">Table</button>
-                <button class="tab-button" data-tab="schedule-tab"><a class="link" href="#"></a>Schedule</button>
+            
                 <button id="btnExportar" class="download">Download CSV <i class="material-icons">vertical_align_bottom</i></button>
                 <button  type="button" class="saveRutine"><a class="link" href="/disneyplus/index.html">Go back</a><i class="material-icons">subdirectory_arrow_left</i></button>
                 <button class="config-button" onclick="toggleConfigPanel()"><i style='font-size:20px' class='fas'>&#xf0ad;</i></button>
@@ -55,26 +54,29 @@
         </div>
   
         
-        <h3>Segementation</h3>
+        <h3>Segementation - Ficha Manual</h3>
         <div class="media-interface">
             <div class="media-selection">
+              <p>Canal: 93 - A</p>
+              <p>Usuario: -</p>
               <label for="media">Media:</label>
               <select id="media" name="media">
-                <option value="">Select options</option>
+                <option value="">Select option</option>
+                <option value="">TMK-ESPN Compact - Premier League 2024/2025-Manchester City . Manchester United</option>
               </select>
             </div>
             <div class="details">
-              <p>ID: -</p>
-              <p>Detail: -</p>
+              <p>ID: 398148</p>
+              <p>Detail: ESPN Compact - Premier League 2024/2025-Manchester City . Manchester United </p>
               <p>Observations: -</p>
-              <p>Registration date: -</p>
-              <p>Duration: -</p>
-              <p>Frame rate: -</p>
-              <p>Origin media: -</p>
+              <p>Registration date: 15/12/2024 16:31</p>
+              <p>Duration: 00:48:24;19</p>
+              <p>Frame rate: 60</p>
+              <p>Origin media: TMK</p>
               <p>Box number: -</p>
-              <p>Start time: -</p>
-              <p>Programming: <strong>NO</strong></p>
-              <p>Version: <strong>NO</strong></p>
+              <p>Start time: 00:00:00;00</p>
+              <p>Programming: <strong>SI</strong></p>
+              <p>Version: <strong>SI</strong></p>
             </div>
             <div class="program-blocks">
               <table>
@@ -88,19 +90,66 @@
                     <th>House ID</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <!-- Rows will be added dynamically -->
-                </tbody>
+              <tbody>
+               
+                  <tr>
+                    <td>1</td>
+                    <td>Block 1</td>
+                    <td>00:00:10;36</td>
+                    <td>00:05:56;31</td>
+                    <td>00:05:45;55</td>
+                    <td>CSOEN 1752</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Block 2</td>
+                    <td>00:06:19;44</td>
+                    <td>00:26:37;47</td>
+                    <td>00:02:58;03</td>
+                    <td>CSOEN 1752</td>
+                  </tr>
+                
+              </tbody>
+
+              <tr>
+                <td>3</td>
+                <td>Block 3</td>
+                <td>00:26:56;36</td>
+                <td>00:29:54;43</td>
+                <td>00:02:58;03</td>
+                <td>CSOEN 1752</td>
+              </tr>
+
+              <td>4</td>
+              <td>Block 4</td>
+              <td>00:30:12;14</td>
+              <td>00:31:07;35</td>
+              <td>00:00:55;17</td>
+              <td>CSOEN 1752</td>
+            </tr>
+
+            <tr>
+            <td>5</td>
+            <td>Block 5</td>
+            <td>00:31:27;14</td>
+            <td>00:49:59;47</td>
+            <td>00:18:31;53</td>
+            <td>CSOEN 1752</td>
+            </tr>
+
               </table>
+              
+           
               <div class="duration-total">
                 <p>Duration total: 0</p>
               </div>
             </div>
             <div class="actions">
-              <button id="newMedia">New media</button>
-              <button id="editMedia">Edit media</button>
-              <button id="deleteMedia">Delete media</button>
+              <button id="newMedia" class="active" active>New media</button>
+              <button id="editMedia" class="disabled" disabled> Edit media </button>
+              <button id="deleteMedia" class="disabled" disabled> Delete media </button>
             </div>
+            
         </div>
 </main>
 <script src="script.js"></script>

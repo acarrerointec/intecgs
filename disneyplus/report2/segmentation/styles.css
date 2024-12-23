@@ -585,4 +585,9 @@ th {
   .actions button:hover {
     background-color: #2986CC;
   }
+  button.disabled {
+    background-color: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+  }
   
