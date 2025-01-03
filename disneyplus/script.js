@@ -1,39 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const routineTab = document.getElementById('routine-tab');
-    const routineSection = document.getElementById('routine-section');
-    const reportTab = document.getElementById('report-tab');
-    const reportSection = document.getElementById('report-section');
-    const dynamicTableBody = document.querySelector('#dynamic-table tbody');
-    const rows = document.querySelectorAll('.clickable-row');
-    
-    // Listener para las filas de la tabla principal
-    rows.forEach((row) => {
-        row.addEventListener('click', () => {
-            // Activar botones de Routine y Report
-            routineTab.classList.add('active');
-            reportTab.classList.add('active');
-     
-            // Mostrar secciones correspondientes
-            routineSection.classList.remove('hidden');
-            reportSection.classList.remove('hidden');
 
-            // Clonar la fila seleccionada en la tabla dinámica
-            const newRow = row.cloneNode(true);
-            newRow.classList.remove('clickable-row'); // Remover la funcionalidad de click en las filas clonadas
-            dynamicTableBody.appendChild(newRow);
-        });
-    });
-
-    // Redirección para el botón Routine
-    routineTab.addEventListener('click', () => {
-        window.location.href = '/rutine/rutine4/routine4.html';
-    });
-
-    // Redirección para el botón Report
-    reportTab.addEventListener('click', () => {
-        window.location.href = '/report/report2/report3.html';
-    });
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     const contextMenu = document.getElementById('contextMenu');
@@ -46,6 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
             contextMenu.style.display = 'block';
             contextMenu.style.left = `${mouseX}px`;
             contextMenu.style.top = `${mouseY}px`;
+        });
+    });
+    
+    document.querySelectorAll('.open-popup').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const url = this.href;
+
+            // Abrir ventana emergente
+            const popup = window.open(
+                url,
+                'popupWindow',
+                'width=1024,height=768,left=100,top=50,resizable=yes,scrollbars=yes'
+            );
+
+            if (popup) {
+                // Configurar confirmación al cerrar la ventana
+                popup.onbeforeunload = function () {
+                    return "¿Estás seguro de que deseas cerrar esta ventana?";
+                };
+            }
         });
     });
 
