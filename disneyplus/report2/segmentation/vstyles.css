@@ -1,0 +1,141 @@
+/* CSS for Version Management Page */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+header .info {
+    font-size: 12x;
+    color: #555;
+    flex: auto;
+}
+
+.controls {
+    margin-bottom: 20px;
+    flex: auto;
+}
+
+.controls label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.controls select {
+    margin-right: 20px;
+    padding: 5px;
+}
+
+.tables {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.table-container {
+    flex: 1;
+    overflow-x: auto;
+}
+
+.table-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table-container th,
+.table-container td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.table-container th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.table-container tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-container tbody tr.selected {
+    background-color: #2986CC;
+}
+
+footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+footer button#new-version {
+    background-color: #2986CC;
+    color: #fff;
+}
+
+footer button#edit-version {
+    background-color: #2986CC;
+    color: #fff;
+}
+
+footer button#save {
+    background-color: #2986CC;
+    color: #fff;
+}
+
+footer button#cancel {
+    background-color: #2986CC;
+    color: #fff;
+}
+
+footer button:hover {
+    opacity: 0.9;
+}
+
+
+.time-table{
+    display: flex;
+    margin: auto;
+    
+    background-color: #ccc;
+    margin:auto;
+   border-color: #333;
+    
+}
