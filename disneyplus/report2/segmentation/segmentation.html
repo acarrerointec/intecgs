@@ -39,67 +39,43 @@
             </div>
         </div>
 
-        </div>
-        <div class="filters-section">
-            <div class="tabs">
-            
-                <button id="btnExportar" class="download">Download CSV <i class="material-icons">vertical_align_bottom</i></button>
-              
-                <button class="config-button" onclick="toggleConfigPanel()"><i style='font-size:20px' class='fas'>&#xf0ad;</i></button>
-            </div>
     
-        </div>
-  
         
-        <h3>Segementation - Ficha Manual</h3>
+        <h3>Segmentation - Manual</h3>
   
-        
-        <div class="media-interface">
-            <div class="media-selection">
-              <p>Canal: 93 - A</p>
-              <p>Usuario: -</p>
+        <div class="container">
+          <div class="details-section">
+              <h3>Detalles</h3>
+              <label for="channel">Canal:</label>
+              <input type="text" id="channel" value="93 - A" readonly>
+  
+              <label for="user">Usuario:</label>
+              <input type="text" id="user" value="-" readonly>
+  
               <label for="media">Media:</label>
-              <select id="media" name="media">
-                <option value="">Select option</option>
-                <option value="">TMK-ESPN Compact - Premier League 2024/2025-Manchester City . Manchester United</option>
+              <select id="media">
+                  <option>TMK:ESPN Compact - Premier League 2024/2025...</option>
               </select>
-            </div>
+  
+              <label for="id">ID:</label>
+              <input type="text" id="id" value="398148" readonly>
+  
+              <label for="detail">Detail:</label>
+              <textarea id="detail" rows="3" readonly>ESPN Compact - Premier League 2024/2025...</textarea>
+  
+              <label for="observations">Observaciones:</label>
+              <textarea id="observations" rows="2" readonly>-</textarea>
+  
+              <label for="date">Fecha registro:</label>
+              <input type="text" id="date" value="15/12/2024 16:31" readonly>
+  
+              <label for="duration">Duración:</label>
+              <input type="text" id="duration" value="00:48:19" readonly>
+          </div>
+  
 
-            <table class="main-table">
-              <thead>
-                  <tr>
-                      <th>ID</th>
-                      <th>Details</th>
-                      <th>Observations</th>
-                      <th>Registration date</th>
-                      <th>Duration</th>
-                      <th>Frame rate</th>
-                      <th>Origin media</th>
-                      <th>Box number</th>
-                      <th>Start time</th>
-                      <th>Programming</th>
-                      <th>Version</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>398148</td>
-                      <td> ESPN Compact - Premier League 2024/2025-Manchester City . Manchester United</td>
-                      <td>-</td>
-                      <td>15/12/2024 16:31</td>
-                      <td>00:48:24;19</td>
-                      <td>60</td>
-                      <td>TMK</td>
-                      <td>-</td>
-                      <td>00:00:00;00</td>
-                      <td>YES</td>
-                      <td>YES</td>
-                  </tr>
-               
-              </tbody>
-          </table>
-          
-            <div class="program-blocks">
+          <section class="tables">
+            <div class="program-section">
               <table>
                 <thead>
                   <tr>
@@ -165,12 +141,13 @@
                 <p>Duration total: 0</p>
               </div>
             </div>
+         
             <div class="actions">
               <button id="newMedia" class="active" active>New media</button>
               <button id="editMedia" class="disabled" disabled> Edit media </button>
               <button id="deleteMedia" class="disabled" disabled> Delete media </button>
             </div>
-            
+          </section>
         </div>
 </main>
 <script src="script.js"></script>

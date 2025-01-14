@@ -590,4 +590,125 @@ th {
     color: #aaa;
     cursor: not-allowed;
   }
-  
+   /* nuevo */
+
+
+     .container {
+            display: flex;
+            flex-direction:row;
+            padding: auto;
+        }
+
+        .details-section {
+            flex: auto;
+            background: white;
+            padding: 1px;
+            border-radius: 1px;
+            margin-right: 1px;
+        }
+
+        .details-section h3 {
+            margin: auto;
+        }
+
+        .details-section label {
+            display: block;
+            margin-bottom: 1px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .details-section input,
+        .details-section select {
+            width: 90%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .program-section {
+            flex: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .program-section table {
+            width: auto;
+            border-collapse: collapse;
+        }
+
+        .program-section th, .program-section td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .program-section th {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .buttons {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            background: #555;
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background: #6c6c6c;
+        }
+
+
+        .tables {
+            display: table-row;
+            justify-content: space-between;
+            gap: 200px;
+            
+        }
+        
+        .table-container {
+            flex: 1;
+            overflow-x: auto;
+        }
+        
+        .table-container h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .table-container th,
+        .table-container td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .table-container th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        
+        .table-container tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .table-container tbody tr.selected {
+            background-color: #2986CC;
+        }
