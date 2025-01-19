@@ -21,19 +21,28 @@ font-family: Arial, sans-serif;
    display: flex;
    margin: auto;
    margin-inline: auto;
+   max-width:auto;
+    max-height: auto;
 }
 
 .header-img {
 
- 
-    margin: auto;
+  margin: auto;
     display: flex;
     margin-left: auto;
-    margin-right: auto;
+   margin-right: auto;
     align-items: last baseline;
+
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
 main {
+    margin-top: auto;
     margin-left: 159px;
     width: 89%;
     max-width:auto;
@@ -58,7 +67,7 @@ main {
     padding: 5px;
     color: #fff;
     margin: auto;
-    margin-top: 51.2px;
+    margin-top: 52.2px;
     padding: auto;
     
 }
@@ -515,3 +524,4 @@ a {
     color: white;
     text-decoration: none;
 }
+

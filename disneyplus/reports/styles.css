@@ -11,28 +11,13 @@ body {
 font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/
+    align-items: center;
     justify-content: flex-start;
     height: auto;
     background-color: #f4f4f4;
 }
 
-/* Imagen en la parte superior */
-.header {
-   display: flex;
-   margin: auto;
-   margin-inline: auto;
-}
 
-.header-img {
-
- 
-   margin: auto;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: last baseline;
-}
 
 main {
 
@@ -48,25 +33,13 @@ main {
 }
 
 
-.breadcrumb {
-    
-    color: #555;
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
-
-.breadcrumb a {
-    color: #2986CC;
-    text-decoration: none;
-}
-
 h3{
 
 
         font-size: 20px;
         text-align: left;
         background-color: white;
-        color: #2986CC;
+        color: black;
         display: auto;
         padding: auto;
         border: auto solid #ddd;
@@ -80,10 +53,16 @@ h3{
 
     background-color: #f5f5f5;
     padding:1%;
-    border-bottom: 1px solid #ccc;
+   /* border-bottom: 1px solid #ccc;*/
+  
+}
+
+.content{
+
+    margin: 10px;
+    margin-top: 5px;
     margin-left: auto;
-    margin-right: 10px;
- 
+    margin-right: auto;
 }
 
 .search-bar {
@@ -115,60 +94,116 @@ h3{
 
 /* Ajustar el estilo de las tablas */
 .main-table {
+
     width: 100%;
     border-collapse: collapse;
     overflow-x: auto;
     font-size: auto;
-    border: 2px solid white
+    border: 2px solid white;
+    background-color: white;
+   
+    margin-left: auto;
+   margin-right: auto;
+    
 }
 
 .main-table th, .main-table td {
-   font-size: 10px;
+
+    font-size: 10px;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     text-align: left;
+    background-color: white;
     
 }
 
 .main-table th {
-    background-color: #f2f2f2;
+    
     text-align: left;
     /***/
     margin: 10px;
-    background-color: #ddd;
+
     font-size: 14px;
-    color: #2986CC;
-    border-bottom: 2px solid #2986CC;
+    color: black;
+    
     background-color: white;
     display: auto;
     text-align: auto;
     flex:auto;
-    border-top: #f2f2f2;
+    border-top: white;
     border-left: #f2f2f2;
     border-right: #f2f2f2;
 }
 
 .main-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: white;
 
 }
 
-.main-table tr:hover {
-    background-color:#2986CC;
+
+
+/* Ajustar el estilo de las tablas */
+.main-table1 {
+
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    font-size: auto;
+    border: 2px solid white;
+    background-color: white;
+   
+    margin-left: auto;
+   margin-right: auto;
+    
 }
+
+.main-table1 th, .main-table1 td {
+
+    font-size: 10px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    text-align: left;
+    background-color: white;
+    
+}
+
+.main-table1 th {
+    
+    text-align: left;
+    /***/
+    margin: 10px;
+
+    font-size: 14px;
+    color: #2986CC;;
+    
+    background-color: white;
+    display: auto;
+    text-align: auto;
+    flex:auto;
+    border-top: white;
+    border-left: #f2f2f2;
+    border-right: #f2f2f2;
+}
+
+.main-table tr:nth-child(even) {
+    background-color: white;
+
+}
+
 
 .filters-section {
     padding: 20px;
 }
 
 .tabs {
+
     display: flex;
 }
 
 .tab-button {
 
     padding: 10px 20px;
-    background-color: #f5f5f5;
+   /* background-color: #f5f5f5;*/
     border: none;
     cursor: pointer;
     color: #555;
@@ -227,21 +262,19 @@ h3{
 /*botones especiales*/
 .download {
 
+border: none;
+padding: 10px 20px;
+margin: 10px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 11px;
+background-color:#2986CC;
+color: white;
+margin-left: 200px;
+margin-right: auto;
+}
 
-    background-color :#2986CC;
-    color : white;
-    padding : 10px 20px;
-    margin : 2px;
-    font-size : 11px;
-    text-align : center;
-    border : none;
-    border-radius : 8px;
-    cursor : pointer;
-    margin-left: auto;
-
-    }
-
-    .reloadData {
+.reloadData {
    
     background-color :#2986CC;
     color : white;
@@ -252,15 +285,15 @@ h3{
     border : none;
     border-radius : 8px;
     cursor : pointer;
-    }
+}
 
+/*Nuevos estilos */
 
-        /* Estilos para el switch */
- .switch {
+.switch {
     position: relative;
     display: inline-block;
-    width: 34px;
-    height: 20px;
+    width: 90px;
+    height: 34px;
 }
 
 .switch input {
@@ -277,78 +310,55 @@ h3{
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    transition: .4s;
+    transition: 0.9s;
     border-radius: 34px;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
+    height: 26px;
+    width: 26px;
     border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
 }
 
 input:checked + .slider {
-    background-color: red;
+    background-color: #2986CC;
 }
 
 input:checked + .slider:before {
-    transform: translateX(14px);
+    transform: translateX(58px);
 }
 
-/*
-/*emial verde
-.switchEmail {
-    position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 20px;
-}
-
-.switchEmail input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.sliderEmail {
+/* Estilo para el texto dentro del switch */
+.status-text {
     position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: auto;
+    color: white;
+    font-weight: bold;
 }
 
-.sliderEmail:before {
-    position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
+/* Estilo para las opciones del tiempo */
+select {
+    margin-top: 5px;
 }
 
-input:checked + .slider {
-    background-color: green;
-}
 
-input:checked + .slider:before {
-    transform: translateX(14px);
-}
+.time-option{
+    text-align: center;
+    font-size: 11px;
+    margin-top: auto;
+    margin: 10px;
+    display: flex;
 
-*/
+}
 .actionsRutine {
     text-align: center;
     background-color: #ddd;
@@ -367,16 +377,20 @@ input:checked + .slider:before {
 }
 
 .saveRutine {
+
     border: none;
     padding: 10px 20px;
-    margin: 5px;
+    margin: auto;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 11px;
     background-color:#2986CC;
     color: white;
+    margin-right: 10px;
+    margin-left: 10px;
   
 }
+
 .link{
     color: white;
     text-decoration: none;
