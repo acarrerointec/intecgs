@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const popup = window.open(
                 url,
                 'popupWindow',
-                'width=1024,height=768,left=100,top=50,resizable=yes,scrollbars=yes'
+                'width=1224,height=1024,left=200,top=60,resizable=yes,scrollbars=yes'
             );
 
             if (popup) {

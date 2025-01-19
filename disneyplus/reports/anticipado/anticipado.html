@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheduling Disney+</title>
+    <title>EMISSION REPORT- ANTICIPADO</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,37 +23,39 @@
        
 
         <div class="search-section">
-            <div class="search-bar">
-                <label for="date-from"><strong>Start date:</strong> </label>
+            <h4>EMISSION REPORT - ANTICIPADO</h4>
+       </div>
+           </br>
 
-                <input type="date" id="start" name="trip-start" value="2024-10-09" disabled/>
-                
-             <label for="network" class="network"><strong>Start time: </strong>2:00 AM</label>
+           <label for="title" class="network"><strong>Title: 12464 - SportsCenter</strong> </label>
 
-                <label for="network" class="network"><strong>Network: </strong>315</label>
-        
-                <label for="feed"><strong>Feed: </strong>A</label>
+               <div class="search-bar">
+                   
+                   <label for="date-from">Start date:</label>
+
+                   <input type="date" id="start" name="trip-start" value="2024-10-09" disabled/>
               
-                <label for="duration" class="network"><strong>Duration:</strong> 01:00</label>
-              
-                <label for="program" class="network"><strong>Programa: </strong>SRMD</label>
+                   <label for="network" class="network">Start time: 2:00 AM</label>
 
-                <label for="title" class="network"><strong>Title: </strong>12464 - SportsCenter </label>
+                   <label for="network" class="network">End time: 3:00 AM</label>
 
-            </div>
-        </div>
+                   <label for="network" class="network">Network: 315</label>
+           
+                   <label for="feed">Feed: A</label>
+               
+   
+               
+                   <label for="program" class="network">Programa: SRMD</label>
 
-        </div>
-        <div class="filters-section">
-            <div class="tabs">
-            
-                <button id="btnExportar" class="download">Download CSV <i class="material-icons">vertical_align_bottom</i></button>
-                
-            </div>
+                       <div class="tabs">
+               
+                           <button class="download">Previous<i class="material-icons"></i></button>
+
+                           <button class="saveRutine">Next<i class="material-icons"></i></button>
+                           
+                       </div>
+               </div>
     
-        </div>
-
-        <h3>Reports Anticipado</h3>
         <form>
             <div class="input-group">
                 <label for="coordinador">Coordinator:</label>
@@ -76,20 +78,21 @@
             </div>
         </form>
 
+        </br>
+
         <section class="registroReport">
-            <h3>Reports comments</h3>
+            <h4>Emission comments</h4>
             <textarea name="comentarios" rows="1" cols="2" placeholder="Enter comments"></textarea>
-            <div class="actionsRutine">
-                <button type="button" class="saveRutine" id="save-button">Save</button>
-            </div>
             
-            <h3>Log reports Anticipado</h3>
+                <button type="button" class="saveRutine" id="save-button">Save</button>
+        
+        </br>
+            <h4>Consolidated reports</h4>
             <table class="main-table">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Date</th>
-                        <th>Time</th>
+            
+                        <th>Date time</th>
                         <th>Operator</th>
                         <th>Description</th>
                     </tr>

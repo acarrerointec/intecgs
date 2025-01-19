@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('save-button').addEventListener('click', function() {
         // Obtener la fecha y hora actuales
         const now = new Date();
-        const formattedDate = now.toLocaleDateString();
+        const formattedDate = now;
         const formattedTime = now.toLocaleTimeString();
 
 
@@ -14,9 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Crear una nueva fila para la tabla
         const newRow = document.createElement('tr');
         newRow.innerHTML = `
-            <td>${logCounter}</td>
             <td>${formattedDate}</td>
-            <td>${formattedTime}</td>
             <td>user@disney.com</td>
             <td>Comments: ${comentarios}</td>
         `;

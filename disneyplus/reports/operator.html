@@ -163,6 +163,7 @@
                         <span id="satellite-status" class="status-text">No</span>
                         <label class="time-option" for="satellite-time-options"></label>
                         <select id="satellite-time-options" disabled>
+                            <option value="None">Select option</option>
                             <option value="Stadium">Stadium</option>
                             <option value="Vinculos -5 Seg">Vinculos -5 Seg</option>
                             <option value="Vinculos +5 Seg">Vinculos +5 Seg</option>
@@ -206,12 +207,18 @@
         </div>
         </br>
    
+        <div class="Reported" style="display: flex; align-items: center; ">
+            <p> Consolidated reports</p>
+            <p style="margin-left: auto">Reported by </p>
+            <select id="reported-time-options">
+              <option value="Operator"> Operator</option>
+            </select>
+          </div>
           
-        <h4>Consolidated reports</h4>
+
             <table class="main-table1">
                 <thead>
                     <tr>
-                        
                         <th>Date time</th>
                         <th>Reported by</th>
                         <th>Operator</th>

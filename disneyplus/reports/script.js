@@ -69,10 +69,12 @@
         dateCell.textContent = currentDate.toLocaleString(); // Formato de fecha y hora
         reported.textContent = 'Operator';
         operatorCell.textContent = 'user@disney.com';  // Aquí puedes agregar el nombre real del operador
-        descriptionCell.textContent = `Started on time: ${startedTime}, End on time: ${endTime}, Bottomline report: ${bottomStatus}, 
+        descriptionCell.textContent = `Started on time:${startedTime}, End on time: ${endTime}, Bottomline report: ${bottomStatus}, 
                                        Batch report: ${batchOption}, Audio report: ${audioOptions}, Signal report: ${signalOptions}, 
                                        Satellite report: ${satelliteOption}, Emission comments - Origin: ${comentarios1}, Technical: ${comentarios2}, 
                                        Operation: ${comentarios3}`;
+
+
 
         // Agregar las celdas a la fila
         newRow.appendChild(dateCell);

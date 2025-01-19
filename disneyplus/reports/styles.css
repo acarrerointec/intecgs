@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: auto;
 }
 
 body {
@@ -15,21 +16,21 @@ font-family: Arial, sans-serif;
     justify-content: flex-start;
     height: auto;
     background-color: #f4f4f4;
+    font-size: auto;
 }
 
 
 
 main {
 
-    margin-left: auto;
+    
     width: 80%;
     max-width:auto;
     max-height: auto;
     background-color: #fff;
     padding: 1px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /*overflow-y: auto;*/
-    margin-right: auto;
+  
 }
 
 

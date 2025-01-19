@@ -3,53 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scheduling Disney+</title>
+    <title>RUTINE</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-     <!-- links para exportar a excel -->
-     <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
-     <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
-     <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
-</head>
+  
 <body>  
     
 
 
     <main>
         
+      <div class="search-section">
+        <h4>RUTINE</h4>
+   </div>
+       </br>
 
-        <div class="search-section">
-            <div class="search-bar">
-    
-                <label for="date-from" class="network" ><strong>Start date:  </strong>2024-10-09</label>
+       <label for="title" class="network"><strong>Title: 12464 - SportsCenter</strong> </label>
 
-                <label for="time-from" class="network" ><strong>Start time:  </strong>2:00 AM</label>
+           <div class="search-bar">
+               
+               <label for="date-from">Start date:</label>
 
-                <label for="network" class="network"><strong>Network: </strong>315</label>
-        
-                <label for="feed"><strong>Feed: </strong>A</label>
-              
-                <label for="duration" class="network"><strong>Duration:</strong> 01:00</label>
-              
-                <label for="program" class="network"><strong>Programa: </strong>SRMD</label>
+               <input type="date" id="start" name="trip-start" value="2024-10-09" disabled/>
+          
+               <label for="network" class="network">Start time: 2:00 AM</label>
 
-                <label for="title" class="network"><strong>Title: </strong>12464 - SportsCenter </label>
-                
-            </div>
-        </div>
+               <label for="network" class="network">End time: 3:00 AM</label>
 
-        </div>
+               <label for="network" class="network">Network: 315</label>
+       
+               <label for="feed">Feed: A</label>
+           
+
+           
+               <label for="program" class="network">Programa: SRMD</label>
+
+                   <div class="tabs">
+           
+                       <button class="download">Previous<i class="material-icons"></i></button>
+
+                       <button class="saveRutine">Next<i class="material-icons"></i></button>
+                       
+                       <button id="btnExportar" class="download">BXF Playlist <i class="material-icons"></i></button>
+                       <button class="reloadData" onclick="document.location.reload();">LST Playlist <i class="material-icons"></i></button>
+                       
+                   </div>
+           </div>
+
+       
         <div class="filters-section">
             <div class="tabs">
            
                 
             
-                <button id="btnExportar" class="download">BXF Playlist <i class="material-icons"></i></button>
-                <button class="reloadData" onclick="document.location.reload();">LST Playlist <i class="material-icons"></i></button>
-                <button class="reloadData" onclick="document.location.reload();">Download CSV<i class="material-icons">vertical_align_bottom</i></button>
+            
+              
             </div>
     
         </div>

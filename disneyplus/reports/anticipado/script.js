@@ -24,12 +24,13 @@ document.getElementById('save-button').addEventListener('click', function() {
                 const newRow = tableBody.insertRow();  // Crea una nueva fila
                 
                 // Agregar las celdas con la información
-                newRow.insertCell(0).textContent = logCounter;
-                newRow.insertCell(1).textContent = new Date().toLocaleDateString(); // Fecha actual
-                newRow.insertCell(2).textContent =  formattedTime;  // Hora
-                newRow.insertCell(3).textContent = 'user@diney.com';   // Operador
+                const currentDate = new Date();
+            
+                newRow.insertCell(0).textContent = currentDate; // Fecha actual
                 
-                newRow.insertCell(4).textContent = `
+                newRow.insertCell(1).textContent = 'user@diney.com';   // Operador
+                
+                newRow.insertCell(2).textContent = `
                     Time: ${horaAprox},
                     Reason: ${motivo}, 
                     Coordinator: ${coordinador},

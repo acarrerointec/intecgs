@@ -19,13 +19,13 @@ document.getElementById('save-button').addEventListener('click', function () {
         const newRow = tableBody.insertRow(); // Crea una nueva fila
 
         // Agregar las celdas con la información
-        newRow.insertCell(0).textContent = logCounter;
-        newRow.insertCell(1).textContent = formattedDate; // Fecha actual
-        newRow.insertCell(2).textContent = formattedTime; // Hora actual
-        newRow.insertCell(3).textContent = 'user@diney.com'; // Operador
+
+        newRow.insertCell(0).textContent = now; // Fecha actual
+       
+        newRow.insertCell(1).textContent = 'user@diney.com'; // Operador
 
         // Celda con detalles
-        const detailCell = newRow.insertCell(4);
+        const detailCell = newRow.insertCell(2);
         detailCell.innerHTML = `
             <strong>Seed:</strong> ${seed}<br>
             <strong>Quadrant:</strong> ${quadrant}<br>
