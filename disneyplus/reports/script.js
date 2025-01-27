@@ -1,5 +1,7 @@
 
-    // Función para activar/desactivar los inputs de hora
+   /*
+   
+   // Función para activar/desactivar los inputs de hora
     function toggleTimeInput(type) {
         const checkbox = document.getElementById(`${type}-switch`);
         const status = document.getElementById(`${type}-status`);
@@ -120,6 +122,127 @@
         });
     }
 
-    // Asociar la función al evento de clic del botón "Save"
-    document.getElementById('save-button').addEventListener('click', addRecordToTable);
-    document.getElementById('save-email').addEventListener('click', addRecordToTable);
+*/
+// deplegables
+
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const content = section.querySelector('.section-content');
+    const icon = section.querySelector('.section-header i');
+
+    if (content.classList.contains('active')) {
+        content.classList.remove('active');
+        icon.style.transform = 'rotate(0deg)';
+    } else {
+        content.classList.add('active');
+        icon.style.transform = 'rotate(180deg)';
+    }
+}
+
+function toggleCommentBox(commentType, enable, commentId) {
+    const commentBox = document.getElementById(commentId);
+    if (commentBox) {
+        commentBox.disabled = !enable;
+    }
+}
+
+
+// modificacion de horario 
+
+function toggleTimeInput(prefix, enable) {
+    const timeInput = document.getElementById(`${prefix}-time`);
+    timeInput.disabled = !enable; // Habilita o deshabilita el campo de tiempo
+    if (enable) {
+        timeInput.focus(); // Enfoca el campo de tiempo si se habilita
+    }
+}
+
+// boton email
+/*
+function toggleEmailInput(name, isYes) {
+    if (isYes) {
+        // Lógica para cuando se selecciona "Yes"
+        console.log("Send Email: Yes");
+    } else {
+        // Lógica para cuando se selecciona "No"
+        console.log("Send Email: No");
+    }
+}
+*/
+
+document.getElementById("save-button").addEventListener("click", () => {
+    const logBody = document.getElementById("log-body");
+
+    // Recopilar datos de las secciones
+    const startTime = document.getElementById("started-time").value;
+    const endTime = document.getElementById("end-time").value;
+
+    const signalComment = document.getElementById("signal-comment").value || "N/A";
+    const satelliteComment = document.getElementById("satellite-comment").value || "N/A";
+
+    const audioComment = document.getElementById("audio-comment").value || "N/A";
+    const batchComment = document.getElementById("batch-comment").value || "N/A";
+
+    const bottomlineComment = document.getElementById("bottomline-comment").value || "N/A";
+
+    // Crear una nueva fila en la tabla
+    const newRow = document.createElement("tr");
+
+    newRow.innerHTML = `
+        <td>${new Date().toLocaleString()}</td> <!-- Fecha y hora actuales -->
+        <td>Operator</td>
+        <td>user@disney.com</td>
+        <td>
+            Start: ${startTime} - End: ${endTime}<br>
+            Signal: ${signalComment}<br>
+            Satellite: ${satelliteComment}<br>
+            Audio: ${audioComment}<br>
+            Batch: ${batchComment}<br>
+            Bottomline: ${bottomlineComment}
+        </td>
+    `;
+
+    // Añadir la nueva fila al cuerpo de la tabla
+    logBody.appendChild(newRow);
+});
+
+// generar reporte send email
+document.getElementById("save-email").addEventListener("click", () => {
+    // Comprobar si la opción "Yes" está seleccionada
+    const emailYes = document.getElementById("send-email-yes").checked;
+
+    if (emailYes) {
+        const logBody = document.getElementById("log-body");
+
+        // Recopilar información para el registro
+        const dateTime = new Date().toLocaleString();
+        const reportedBy = "Operator"; // Puedes cambiarlo según el usuario activo
+        const operator = "Email Sent"; // Estado que refleja el envío del correo
+        const description = "Report sent via email successfully."; // Descripción fija o personalizada
+
+        // Crear una nueva fila para la tabla
+        const newRow = document.createElement("tr");
+
+        newRow.innerHTML = `
+            <td>${dateTime}</td>
+            <td>${reportedBy}</td>
+            <td>${operator}</td>
+            <td>${description}</td>
+        `;
+
+        // Añadir la nueva fila al cuerpo de la tabla
+        logBody.appendChild(newRow);
+
+        // Mostrar confirmación (opcional)
+        alert("Email sent and logged successfully.");
+    } else {
+        alert("Please select 'Yes' to send the email.");
+    }
+});
+
+const successMessage = document.getElementById("email-success");
+
+successMessage.style.display = "block";
+setTimeout(() => {
+    successMessage.style.display = "none";
+}, 3000);

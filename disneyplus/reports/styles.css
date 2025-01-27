@@ -95,7 +95,7 @@ h3{
 
 /* Ajustar el estilo de las tablas */
 .main-table {
-
+/*
     width: 100%;
     border-collapse: collapse;
     overflow-x: auto;
@@ -105,6 +105,10 @@ h3{
    
     margin-left: auto;
    margin-right: auto;
+*/
+   width: 100%; /* Ocupa el 100% del contenedor */
+   border-collapse: collapse; /* Elimina el espacio entre celdas */
+   font-size: 14px; /* Tamaño de fuente más pequeño */
     
 }
 
@@ -417,13 +421,54 @@ select {
 }
 
 textarea {
+    /*
     margin: 5px 0;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    */
+
+    width: 100%; /* Ajusta el textarea al ancho de la celda */
+    box-sizing: border-box; /* Incluye el padding y border en el ancho */
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 50px; /* Altura mínima del textarea */
+
 }
 
 .network{
     margin: 10px;
 
 }
+
+/* desplegables*/
+
+.section {
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.section-header {
+    background-color: #f5f5f5;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header i {
+    transition: transform 0.3s;
+}
+
+.section-content {
+    display: none;
+    padding: 10px;
+}
+
+.section-content.active {
+    display: block;
+}
+

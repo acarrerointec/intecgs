@@ -54,157 +54,245 @@
 
 
         <h3>Incidents</h3>
+  <!-- Incidents Section -->
+  <section class="incidents">
+    <table class="main-table">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Options</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- Started on time -->
+                <td>Started on time</td>
+                <td class="options">
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="started" id="started-yes" onchange="toggleTimeInput('started', true)"> Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="started" id="started-no" onchange="toggleTimeInput('started', false)"> No
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <input type="time" id="started-time" value="02:00" disabled>
+                </td>
+            </tr>
+            <tr>
+                <!-- End on time -->
+                <td>End on time</td>
+                <td class="options">
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="end" id="end-yes" onchange="toggleTimeInput('end', true)"> Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="end" id="end-no" onchange="toggleTimeInput('end', false)"> No
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <input type="time" id="end-time" value="03:00" disabled>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Origin Section -->
+<section class="section" id="origin-section">
+    <div class="section-header" onclick="toggleSection('origin-section')">
+        Origin
+        <i class="material-icons">expand_more</i>
+    </div>
+    <div class="section-content">
         <table class="main-table">
             <thead>
                 <tr>
-                    <th>Started on time</th>
-                    <th>End on time</th>
-                    <th>Bottomline with problems</th>
-                    <th>The batch coincidence</th>
-                    <th>Audio Ok</th>
-                    <th>Cuts in Signal origin</th>
-                    <th>Satellite cut</th>
-                    
+                    <th></th>
+                    <th>Options</th>
+                    <th>Comment</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <!-- Started on time -->
-                    <td>
-                        <label class="switch" for="started-switch">
-                            <input type="checkbox" id="started-switch" onchange="toggleTimeInput('started')">
-                            <span class="slider"></span>
-                        </label>
-                        <span id="started-status" class="status-text">No</span>
-                           
-                        <label class="time-option" for="bottomline-time-options"></label> 
-                        <input type="time" id="started-time" value="02:00" disabled>
+                    <td>Cuts in Signal</td>
+                    <td class="options">
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="signal" id="signal-yes" onchange="toggleCommentBox('Origin', true, 'signal-comment')"> Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="signal" id="signal-no" onchange="toggleCommentBox('Origin', false, 'signal-comment')"> No
+                            </label>
+                        </div>
                     </td>
-    
-                    <!-- End on time -->
                     <td>
-                        <label class="switch" for="end-switch">
-                            <input type="checkbox" id="end-switch" onchange="toggleTimeInput('end')">
-                            <span class="slider"></span>
-                        </label>
-                        <span id="end-status" class="status-text">No</span>
-                        <label class="time-option" for="bottomline-time-options"></label>
-                        <input type="time" id="end-time" value="03:00" disabled>
+                        <textarea id="signal-comment" placeholder="Add comment..." disabled></textarea>
                     </td>
-    
-                    <!-- Bottomline with problems -->
-                    <td>
-                        <label class="switch" for="bottomline-switch">
-                            <input type="checkbox" id="bottomline-switch" onchange="toggleSwitch('bottomline')">
-                            <span class="slider"></span>
-                        </label>
-                        <span id="bottomline-status" class="status-text">No</span>
-                        <label class="time-option" for="bottomline-time-options"></label>
-                        <select id="bottomline-time-options" disabled>
-                            <option value="None">Select option</option>
-                            <option value="Origin">Origin</option>
-                            <option value="Operator">Operator</option>
-                            <option value="Technical">Technical</option>
-                            
-                        </select>
+                </tr>
+                <tr>
+                    <td>Satellite Cut</td>
+                    <td class="options">
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="satellite" id="satellite-yes" onchange="toggleCommentBox('Origin', true, 'satellite-comment')"> Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="satellite" id="satellite-no" onchange="toggleCommentBox('Origin', false, 'satellite-comment')"> No
+                            </label>
+                        </div>
                     </td>
-    
-                    <!-- Batch matches -->
                     <td>
-                        <label class="switch" for="batch-switch">
-                            <input type="checkbox" id="batch-switch" onchange="toggleSwitch('batch')">
-                            <span class="slider"></span>
-                        </label>
-                        <span id="batch-status" class="status-text">No</span>
-                        <label class="time-option" for="batch-time-options"></label>
-                        <select id="batch-time-options" disabled>
-                            <option value="None">Select time</option>
-                            <option value="-5 Seg">-5 Seg</option>
-                            <option value="+5 Seg">+5 Seg</option>
-                        </select>
-                    </td>
-    
-                    <!-- Audio Ok -->
-                    <td>
-                        <label class="switch" for="audio-switch">
-                            <input type="checkbox" id="audio-switch" onchange="toggleSwitch('audio')">
-                            <span class="slider"></span>
-                        </label>
-                        <span id="audio-status" class="status-text">No</span>
-                        <label class="time-option" for="audio-time-options"></label>
-                        <select id="audio-time-options" disabled>
-                            <option value="None">Select option</option>
-                            <option value="-5 Seg">-5 Seg</option>
-                            <option value="+5 Seg">+5 Seg</option>
-                        </select>
-                    </td>
-    
-                    <!-- Signal origin failure -->
-                    <td>
-                        <label class="switch" for="signal-switch">
-                            <input type="checkbox" id="signal-switch" onchange="toggleSwitch('signal')">
-                            <span class="slider"></span>
-                        </label>
-                        <span id="signal-status" class="status-text">No</span>
-                        <label class="time-option" for="signal-time-options"></label>
-                        <select id="signal-time-options" disabled>
-                            <option value="None">Select time</option>
-                            <option value="-5 Seg">-5 Seg</option>
-                            <option value="+5 Seg">+5 Seg</option>
-                        </select>
-                    </td>
-    
-                    <!-- Satellite failure -->
-                    <td>
-                        <label class="switch" for="satellite-switch">
-                            <input type="checkbox" id="satellite-switch" onchange="toggleSwitch('satellite')">
-                            <span class="slider"></span>
-                        </label>
-                        <span id="satellite-status" class="status-text">No</span>
-                        <label class="time-option" for="satellite-time-options"></label>
-                        <select id="satellite-time-options" disabled>
-                            <option value="None">Select option</option>
-                            <option value="Stadium">Stadium</option>
-                            <option value="Vinculos -5 Seg">Vinculos -5 Seg</option>
-                            <option value="Vinculos +5 Seg">Vinculos +5 Seg</option>
-                        </select>
-                    </td>
-    
-                    <!-- Save Button -->
-                    <td>
-                        <button type="button" class="saveRutine" id="save-button">Save</button>
+                        <textarea id="satellite-comment" placeholder="Add comment..." disabled></textarea>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+</section>
+
+<!-- Technical Section -->
+<section class="section" id="technical-section">
+    <div class="section-header" onclick="toggleSection('technical-section')">
+        Technical
+        <i class="material-icons">expand_more</i>
+    </div>
+    <div class="section-content">
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Options</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Audio Ok</td>
+                    <td class="options">
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="audio" id="audio-yes" onchange="toggleCommentBox('Technical', true, 'audio-comment')"> Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="audio" id="audio-no" onchange="toggleCommentBox('Technical', false, 'audio-comment')"> No
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <textarea id="audio-comment" placeholder="Add comment..." disabled></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>The Batch Coincidence</td>
+                    <td class="options">
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="batch" id="batch-yes" onchange="toggleCommentBox('Technical', true, 'batch-comment')"> Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="batch" id="batch-no" onchange="toggleCommentBox('Technical', false, 'batch-comment')"> No
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <textarea id="batch-comment" placeholder="Add comment..." disabled></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Operation Section -->
+<section class="section" id="operation-section">
+    <div class="section-header" onclick="toggleSection('operation-section')">
+        Operation
+        <i class="material-icons">expand_more</i>
+    </div>
+    <div class="section-content">
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Options</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bottomline with Problems</td>
+                    <td class="options">
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="bottomline" id="bottomline-yes" onchange="toggleCommentBox('Operation', true, 'bottomline-comment')"> Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="bottomline" id="bottomline-no" onchange="toggleCommentBox('Operation', false, 'bottomline-comment')"> No
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <textarea id="bottomline-comment" placeholder="Add comment..." disabled></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+
 
     
-        <h3>Emission comments</h3>
-       
-        <div class ="registroReport">
+<!-- Action Buttons -->
+<section class="actions">
+    <button class="saveRutine" id="save-button">Save</button>
+    
+</section>
+</br>
+<!-- Send mail -->
+<section class="incidents">
+    <table class="main-table">
+        <thead>
+            <tr>
+                <th>Report Email</th>
+                <th>Options</th>
+                <th></th> <!-- Columna vacía para mantener la estructura -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Send Email</td> <!-- Texto descriptivo -->
+                <td class="options">
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="send-email" id="send-email-yes" onchange="toggleApplyButton(true)"> Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="send-email" id="send-email-no" onchange="toggleApplyButton(false)"> No
+                        </label>
+                    </div>
+                    
+                </td>
+                <td>
+                    <button class="saveRutine" id="save-email" disabled>Apply</button>
 
-            <form>
-                <label for="comentarios1"><strong>Origin:</strong></label>
-                <textarea name="comentarios1" rows="2" style="height: auto;" placeholder="Enter your comment here..."></textarea>
-            
-                <label for="comentarios2"><strong>Technical:</strong></label>
-                <textarea name="comentarios2" rows="2" style="height: auto;" placeholder="Enter your comment here..."></textarea>
-            
-                <label for="comentarios3"><strong>Operation:</strong></label>
-                <textarea name="comentarios3" rows="2" style="height: auto;" placeholder="Enter your comment here..."></textarea>
-            
-            
-              </form>
+                </td>
+                
+               
+            </tr>
+        </tbody>
+    </table>
+    <div id="email-success">Email sent and logged successfully!</div>
+</section>
 
-            <h3>Email </h3>
-                   
-            <div class="email-section">
-                <label class="switch"> <input type="checkbox" id="checkboxemail"> <span class="slider"></span></label>  
-                <button type="button" class="saveRutine" id="save-email" style="height: auto">Save</button>
 
-            </div>
-          
-        </div>
         </br>
    
         <div class="Reported" style="display: flex; align-items: center; ">
@@ -239,3 +327,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
