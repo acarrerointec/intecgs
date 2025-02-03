@@ -1,248 +1,331 @@
+function applyFilter() {
+    const filterValue = document.getElementById('filter-options').value;
+    const allContainers = document.querySelectorAll('.table-container');
+    
+    allContainers.forEach(container => {
+        container.classList.remove('active-table');
+    });
 
-   /*
-   
-   // Función para activar/desactivar los inputs de hora
-    function toggleTimeInput(type) {
-        const checkbox = document.getElementById(`${type}-switch`);
-        const status = document.getElementById(`${type}-status`);
-        const timeInput = document.getElementById(`${type}-time`);
-
-        if (checkbox.checked) {
-            status.textContent = "Yes";
-            timeInput.disabled = false;
-        } else {
-            status.textContent = "No";
-            timeInput.disabled = true;
+    if(filterValue === 'all') {
+        allContainers.forEach(container => {
+            container.classList.add('active-table');
+        });
+    } else {
+        const targetContainer = document.getElementById(`${filterValue}-table`);
+        if(targetContainer) {
+            targetContainer.classList.add('active-table');
         }
     }
+}
 
-    // Función para activar/desactivar las opciones de los selectores
-    function toggleSwitch(type) {
-        const checkbox = document.getElementById(`${type}-switch`);
-        const status = document.getElementById(`${type}-status`);
-        const select = document.getElementById(`${type}-time-options`);
+window.onload = function() {
+    applyFilter();
+}
 
-        if (checkbox.checked) {
-            status.textContent = "Yes";
-            if (select) select.disabled = false;
-        } else {
-            status.textContent = "No";
-            if (select) select.disabled = true;
-        }
-    }
+function toggleTimeInput(type, isEnabled) {
+    const timeInput = document.getElementById(`${type}-time`);
+    timeInput.disabled = !isEnabled;
 
-    // Función para agregar un registro a la tabla de informes consolidados
-    function addRecordToTable() {
-        // Obtener los valores de los campos
-        const startedStatus = document.getElementById('started-status').textContent;
-        const startedTime = document.getElementById('started-time').value;
-        const endStatus = document.getElementById('end-status').textContent;
-        const endTime = document.getElementById('end-time').value;
-        const bottomlineStatus = document.getElementById('bottomline-status').textContent;
-        const bottomStatus = document.getElementById('bottomline-time-options').value;
-        const batchStatus = document.getElementById('batch-status').textContent;
-        const batchOption = document.getElementById('batch-time-options').value;
-        const audioStatus = document.getElementById('audio-status').textContent;
-        const audioOptions = document.getElementById('audio-time-options').value;
-        const signalStatus = document.getElementById('signal-status').textContent;
-        const signalOptions = document.getElementById('signal-time-options').value;
-        const satelliteStatus = document.getElementById('satellite-status').textContent;
-        const satelliteOption = document.getElementById('satellite-time-options').value;
-
-        const comentarios1 = document.querySelector('textarea[name="comentarios1"]').value;
-        const comentarios2 = document.querySelector('textarea[name="comentarios2"]').value;
-        const comentarios3 = document.querySelector('textarea[name="comentarios3"]').value;
-
-        // Obtener la fecha y hora actuales
-        const currentDate = new Date();
-        const dateString = currentDate.toLocaleDateString();
-        const timeString = currentDate.toLocaleTimeString();
-
-        // Crear una nueva fila para la tabla
-        const newRow = document.createElement('tr');
-
-        // Crear las celdas con los valores obtenidos
-        const dateCell = document.createElement('td');
-        const reported = document.createElement('td');
-        const operatorCell = document.createElement('td');
-        const descriptionCell = document.createElement('td');
-
-        // Asignar valores a las celdas
-        dateCell.textContent = currentDate.toLocaleString(); // Formato de fecha y hora
-        reported.textContent = 'Operator';
-        operatorCell.textContent = 'user@disney.com';  // Aquí puedes agregar el nombre real del operador
-        descriptionCell.textContent = `Started on time:${startedTime}, End on time: ${endTime}, Bottomline report: ${bottomStatus}, 
-                                       Batch report: ${batchOption}, Audio report: ${audioOptions}, Signal report: ${signalOptions}, 
-                                       Satellite report: ${satelliteOption}, Emission comments - Origin: ${comentarios1}, Technical: ${comentarios2}, 
-                                       Operation: ${comentarios3}`;
-
-
-
-        // Agregar las celdas a la fila
-        newRow.appendChild(dateCell);
-        newRow.appendChild(reported);
-        newRow.appendChild(operatorCell);
-        newRow.appendChild(descriptionCell);
-
-        // Insertar la nueva fila en la tabla
-        document.getElementById('log-body').appendChild(newRow);
-
-        // Limpiar los campos después de guardar el registro
-        clearFields();
-    }
-
-    // Función para limpiar los campos del formulario
-    function clearFields() {
-        // Limpiar las áreas de texto de comentarios
-        document.querySelector('textarea[name="comentarios1"]').value = '';
-        document.querySelector('textarea[name="comentarios2"]').value = '';
-        document.querySelector('textarea[name="comentarios3"]').value = '';
-
-        // Limpiar los estados de los switches y las selecciones de los time-options
-        const switches = document.querySelectorAll('.switch input');
-        switches.forEach(switchElement => {
-            switchElement.checked = false;
-        });
-
-        const statuses = document.querySelectorAll('.status-text');
-        statuses.forEach(status => {
-            status.textContent = "No";
-        });
-
-        const timeInputs = document.querySelectorAll('input[type="time"]');
-        timeInputs.forEach(timeInput => {
-            timeInput.value = "02:00";
-            timeInput.disabled = true;
-        });
-
-        const selects = document.querySelectorAll('select');
-        selects.forEach(select => {
-            select.value = "0";
-            select.disabled = true;
-        });
-    }
-
-*/
-// deplegables
-
-function toggleSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    const content = section.querySelector('.section-content');
-    const icon = section.querySelector('.section-header i');
-
-    if (content.classList.contains('active')) {
-        content.classList.remove('active');
-        icon.style.transform = 'rotate(0deg)';
-    } else {
-        content.classList.add('active');
-        icon.style.transform = 'rotate(180deg)';
+    if(isEnabled) {
+        timeInput.value = type === 'started' ? '02:00' : '03:00';
     }
 }
 
-function toggleCommentBox(commentType, enable, commentId) {
-    const commentBox = document.getElementById(commentId);
-    if (commentBox) {
-        commentBox.disabled = !enable;
-    }
+function toggleApplyButton(isEnabled) {
+    document.getElementById('save-email').disabled = !isEnabled;
 }
 
+// Función para limpiar las opciones después de guardar
+function clearSelections() {
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.checked = false;
+    });
 
-// modificacion de horario 
+    document.querySelectorAll('input[type="time"]').forEach(timeInput => {
+        timeInput.value = timeInput.id === 'started-time' ? '02:00' : '03:00';
+        timeInput.disabled = true;
+    });
 
-function toggleTimeInput(prefix, enable) {
-    const timeInput = document.getElementById(`${prefix}-time`);
-    timeInput.disabled = !enable; // Habilita o deshabilita el campo de tiempo
-    if (enable) {
-        timeInput.focus(); // Enfoca el campo de tiempo si se habilita
-    }
+    document.getElementById('general-comment').value = '';
 }
 
-// boton email
-/*
-function toggleEmailInput(name, isYes) {
-    if (isYes) {
-        // Lógica para cuando se selecciona "Yes"
-        console.log("Send Email: Yes");
-    } else {
-        // Lógica para cuando se selecciona "No"
-        console.log("Send Email: No");
+document.getElementById('save-button').addEventListener('click', function() {
+    const currentDateTime = new Date().toLocaleString();
+    const generalComment = document.getElementById('general-comment').value;
+
+    const startedStatus = document.getElementById('started-yes').checked ? 'Yes' : 'No';
+    const startedTime = document.getElementById('started-time').value;
+    const endStatus = document.getElementById('end-yes').checked ? 'Yes' : 'No';
+    const endTime = document.getElementById('end-time').value;
+
+    let description = `Started: ${startedStatus}${startedStatus === 'No' ? ` (${startedTime})` : ''}, `;
+    description += `Ended: ${endStatus}${endStatus === 'No' ? ` (${endTime})` : ''}`;
+
+    const signalStatus = document.getElementById('signal-yes').checked ? 'Yes' : 'No';
+    const satelliteStatus = document.getElementById('satellite-yes').checked ? 'Yes' : 'No';
+    description += ` | Signal: ${signalStatus}, Satellite: ${satelliteStatus}`;
+
+    const audioStatus = document.getElementById('audio-yes').checked ? 'Yes' : 'No';
+    const batchStatus = document.getElementById('batch-yes').checked ? 'Yes' : 'No';
+    description += ` | Audio: ${audioStatus}, Batch: ${batchStatus}`;
+
+    const bottomlineStatus = document.getElementById('bottomline-yes').checked ? 'Yes' : 'No';
+    description += ` | Bottomline: ${bottomlineStatus}`;
+
+    if (generalComment) {
+        description += ` | Comments: ${generalComment}`;
     }
-}
-*/
 
-document.getElementById("save-button").addEventListener("click", () => {
-    const logBody = document.getElementById("log-body");
-
-    // Recopilar datos de las secciones
-    const startTime = document.getElementById("started-time").value;
-    const endTime = document.getElementById("end-time").value;
-
-    const signalComment = document.getElementById("signal-comment").value || "N/A";
-    const satelliteComment = document.getElementById("satellite-comment").value || "N/A";
-
-    const audioComment = document.getElementById("audio-comment").value || "N/A";
-    const batchComment = document.getElementById("batch-comment").value || "N/A";
-
-    const bottomlineComment = document.getElementById("bottomline-comment").value || "N/A";
-
-    // Crear una nueva fila en la tabla
-    const newRow = document.createElement("tr");
-
+    const tableBody = document.getElementById('log-body');
+    const newRow = tableBody.insertRow();
+    
     newRow.innerHTML = `
-        <td>${new Date().toLocaleString()}</td> <!-- Fecha y hora actuales -->
+        <td>${currentDateTime}</td>
+        <td>System</td> 
         <td>Operator</td>
-        <td>user@disney.com</td>
-        <td>
-            Start: ${startTime} - End: ${endTime}<br>
-            Signal: ${signalComment}<br>
-            Satellite: ${satelliteComment}<br>
-            Audio: ${audioComment}<br>
-            Batch: ${batchComment}<br>
-            Bottomline: ${bottomlineComment}
-        </td>
+        <td>${description}</td>
     `;
 
-    // Añadir la nueva fila al cuerpo de la tabla
-    logBody.appendChild(newRow);
+    clearSelections();
 });
 
-// generar reporte send email
-document.getElementById("save-email").addEventListener("click", () => {
-    // Comprobar si la opción "Yes" está seleccionada
-    const emailYes = document.getElementById("send-email-yes").checked;
 
-    if (emailYes) {
-        const logBody = document.getElementById("log-body");
+let chartInstance = null;
 
-        // Recopilar información para el registro
-        const dateTime = new Date().toLocaleString();
-        const reportedBy = "Operator"; // Puedes cambiarlo según el usuario activo
-        const operator = "Email Sent"; // Estado que refleja el envío del correo
-        const description = "Report sent via email successfully."; // Descripción fija o personalizada
-
-        // Crear una nueva fila para la tabla
-        const newRow = document.createElement("tr");
-
-        newRow.innerHTML = `
-            <td>${dateTime}</td>
-            <td>${reportedBy}</td>
-            <td>${operator}</td>
-            <td>${description}</td>
-        `;
-
-        // Añadir la nueva fila al cuerpo de la tabla
-        logBody.appendChild(newRow);
-
-        // Mostrar confirmación (opcional)
-        alert("Email sent and logged successfully.");
-    } else {
-        alert("Please select 'Yes' to send the email.");
+document.getElementById('toggleChart').addEventListener('click', function() {
+    const container = document.getElementById('chartContainer');
+    container.style.display = container.style.display === 'none' ? 'block' : 'none';
+    if (container.style.display === 'block') {
+        updateChart();
     }
 });
 
-const successMessage = document.getElementById("email-success");
+function updateChart() {
+    const ctx = document.getElementById('reportChart').getContext('2d');
+    const categories = {
+        'Started on time': 0,
+        'End on time': 0,
+        'Cuts in Signal': 0,
+        'Satellite Cut': 0,
+        'Audio Ok': 0,
+        'The Batch Coincidence': 0,
+        'Bottomline with Problems': 0
+    };
 
-successMessage.style.display = "block";
-setTimeout(() => {
-    successMessage.style.display = "none";
-}, 3000);
+    document.querySelectorAll('#log-body tr').forEach(row => {
+        const desc = row.cells[3].textContent;
+        if (desc.includes('Started: No')) categories['Started on time']++;
+        if (desc.includes('Ended: No')) categories['End on time']++;
+        if (desc.includes('Signal: Yes')) categories['Cuts in Signal']++;
+        if (desc.includes('Satellite: Yes')) categories['Satellite Cut']++;
+        if (desc.includes('Audio: No')) categories['Audio Ok']++;
+        if (desc.includes('Batch: No')) categories['The Batch Coincidence']++;
+        if (desc.includes('Bottomline: Yes')) categories['Bottomline with Problems']++;
+    });
+
+    if (chartInstance) chartInstance.destroy();
+
+    chartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(categories),
+            datasets: [{
+                label: 'Incidentes por Categoría',
+                data: Object.values(categories),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)',
+                    'rgba(255, 159, 64, 0.5)',
+                    'rgba(201, 203, 207, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(201, 203, 207, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Category'
+                    }
+                }
+            }
+        }
+    });
+}
+
+
+
+
+
+
+
+
+/*
+function applyFilter() {
+    const filterValue = document.getElementById('filter-options').value;
+    const allContainers = document.querySelectorAll('.table-container');
+    
+    // Ocultar todas las tablas primero
+    allContainers.forEach(container => {
+        container.classList.remove('active-table');
+    });
+
+    // Mostrar la selección
+    if(filterValue === 'all') {
+        allContainers.forEach(container => {
+            container.classList.add('active-table');
+        });
+    } else {
+        const targetContainer = document.getElementById(`${filterValue}-table`);
+        if(targetContainer) {
+            targetContainer.classList.add('active-table');
+        }
+    }
+}
+
+// Mostrar todas las tablas al cargar inicialmente
+window.onload = function() {
+    applyFilter(); // Muestra todas las tablas por defecto
+}
+
+// Función para habilitar/deshabilitar inputs de tiempo
+function toggleTimeInput(type, isEnabled) {
+    const timeInput = document.getElementById(`${type}-time`);
+    timeInput.disabled = isEnabled;
+    
+    // Restablecer valor original si se vuelve a seleccionar "Yes"
+    if(isEnabled) {
+        timeInput.value = type === 'started' ? '02:00' : '03:00';
+    }
+}
+
+// limpiar las opciones de incidents
+
+
+document.getElementById('save-button').addEventListener('click', function() {
+    const currentDateTime = new Date().toLocaleString();
+    const reportedBy = document.getElementById('reported-time-options').value;
+    const generalComment = document.getElementById('general-comment').value;
+
+    // Obtener tiempos modificados
+    const startedTime = document.getElementById('started-time').value;
+    const endTime = document.getElementById('end-time').value;
+
+    let description = '';
+
+    // Manejar started time
+    const startedStatus = document.getElementById('started-yes').checked ? 'Yes' : 'No';
+    description += `Started: ${startedStatus}`;
+    if(startedStatus === 'No') {
+        description += ` (${startedTime})`;
+    }
+
+    // Manejar end time
+    const endStatus = document.getElementById('end-yes').checked ? 'Yes' : 'No';
+    description += `, Ended: ${endStatus}`;
+    if(endStatus === 'No') {
+        description += ` (${endTime})`;
+    }
+
+    // Resto de las secciones (se mantienen igual)
+    const signalStatus = document.getElementById('signal-yes').checked ? 'Yes' : 'No';
+    const satelliteStatus = document.getElementById('satellite-yes').checked ? 'Yes' : 'No';
+    description += ` | Signal: ${signalStatus}, Satellite: ${satelliteStatus}`;
+
+    const audioStatus = document.getElementById('audio-yes').checked ? 'Yes' : 'No';
+    const batchStatus = document.getElementById('batch-yes').checked ? 'Yes' : 'No';
+    description += ` | Audio: ${audioStatus}, Batch: ${batchStatus}`;
+
+    const bottomlineStatus = document.getElementById('bottomline-yes').checked ? 'Yes' : 'No';
+    description += ` | Bottomline: ${bottomlineStatus}`;
+
+    if(generalComment) {
+        description += ` | Comments: ${generalComment}`;
+    }
+
+    const tableBody = document.getElementById('log-body');
+    const newRow = tableBody.insertRow();
+    
+    newRow.innerHTML = `
+        <td>${currentDateTime}</td>
+        <td>${reportedBy}</td>
+        <td>Operator</td>
+        <td>${description}</td>
+    `;
+
+    document.getElementById('general-comment').value = '';
+});
+*/
+
+/* Graficos de los reportes v1 
+document.addEventListener("DOMContentLoaded", function() {
+    let reportCounts = {
+        Time: 0,
+        Origin: 0,
+        Technical: 0,
+        Operation: 0
+    };
+
+    let chart;
+    function updateChart() {
+        const ctx = document.getElementById('reportChart').getContext('2d');
+        if (chart) chart.destroy();
+        chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(reportCounts),
+                datasets: [{
+                    label: 'Number of Reports',
+                    data: Object.values(reportCounts),
+                    backgroundColor: ['red', 'blue', 'green', 'yellow']
+                }]
+            }
+        });
+    }
+
+    function logReport(category) {
+        if (reportCounts.hasOwnProperty(category)) {
+            reportCounts[category]++;
+            updateChart();
+        }
+    }
+
+    document.getElementById("toggleChart").addEventListener("click", function() {
+        let chartContainer = document.getElementById("chartContainer");
+        chartContainer.style.display = chartContainer.style.display === "none" ? "block" : "none";
+    });
+
+    document.getElementById("save-button").addEventListener("click", function() {
+        if (document.getElementById("started-no").checked) logReport("Time");
+        if (document.getElementById("end-no").checked) logReport("Time");
+        if (document.getElementById("signal-yes").checked) logReport("Origin");
+        if (document.getElementById("satellite-yes").checked) logReport("Origin");
+        if (document.getElementById("audio-no").checked) logReport("Technical");
+        if (document.getElementById("batch-no").checked) logReport("Technical");
+        if (document.getElementById("bottomline-yes").checked) logReport("Operation");
+    });
+
+    updateChart();
+});
+*/
