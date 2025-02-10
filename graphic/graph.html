@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Links para exportar a Excel -->
+    <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+</head>
+
+<body>
+    <header>
+        <img src="./Disney.png" alt="Disney Logo" class="head-img">
+
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <h2>Scheduling</h2>
+            <div class="divider"></div>
+            <ul id="menu-options" class="menu-options">
+
+                <li data-option="week"><a href="/week/week.html">Week</a></li>
+                <li data-option="daily"><a href="/daily/daily.html">Daily</a></li>
+                <li data-option="comparative"><a href="/comparative/comparative.html">Comparative</a></li>
+                <li data-option="disney"><a href="/disneyplus/disney.html">Disney+</a></li>
+            </ul>
+            <h2>Tasks</h2>
+            <div class="divider"></div>
+            <ul id="task-options" class="menu-options">
+                <li data-option="ingest">Ingest Tmk</li>
+                <li data-option="ingest">Ingest Edm</li>
+                <li data-option="recording">Recording</li>
+            </ul>
+            <h2>Graph</h2>
+            <div class="divider"></div>
+            <ul id="task-options" class="menu-options">
+                <li class="active" data-option="graph"><a href="/graphic/graph.html">Graph Report</a></li>
+            </ul>
+            <h2>Administrator</h2>
+            <div class="divider"></div>
+            <ul id="admin-options" class="menu-options">
+                <li data-option="recording">Recording
+                    <ul class="submenu">
+                        <li data-option="inputs">Inputs</li>
+                        <li data-option="equipment">Equipment</li>
+                        <li data-option="operator">Operator</li>
+                    </ul>
+                </li>
+                <li data-option="ingest-tmk">Ingest Tmk
+                    <!-- Submenú adicional de Ingest Tmk -->
+                    <ul class="submenu">
+                        <li data-option="grouping-type">Grouping type</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+
+
+    <main>
+        <div class="breadcrumb"> 
+            <button id="toggle-menu" onclick="toggleSidebar()"><</button>
+            <span>Graph</span> >
+            <a href="/graphic/graph.html">Report</a>
+            <button id="logout-button" class="logout-button">Log out</button>
+        </div>
+    
+        <div class="search-section">
+            <div class="search-bar">
+                <h3>Search</h3>
+                <label for="date-from" class="network">Start date: </label>
+                <input type="date" id="date-from">
+                
+                <label for="network">Feeds: </label>
+                <select id="network" class="network">
+                    <option value="select">Select options</option>
+                    <option value="0">All items are selected</option>
+                    <option value="1">706</option>
+                    <option value="2">315</option>
+                </select>
+    
+                <label for="feed" class="network">Network:</label>
+                <select id="feed">
+                    <option value="select">Select options</option>
+                    <option value="0">All items are selected</option>
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                </select>
+    
+                <button class="apply-button">Apply</button>
+            </div>
+        </div>
+    
+        <div class="graph-container">
+            <h3>Report Status</h3>
+            <canvas id="statusChart"></canvas>
+        </div>
+
+        <div class="main-table">
+            <h3>Report Data</h3>
+            <table class="main-table" border="1">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody id="reportTableBody"></tbody>
+            </table>
+        </div>
+        
+    </main>
+    <script type="module" src="../logout.js"></script>
+
+
+    <script src="graph.js"></script>
+</body>
+
+</html>

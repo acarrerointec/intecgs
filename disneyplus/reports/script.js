@@ -114,12 +114,12 @@ function updateChart() {
 
     document.querySelectorAll('#log-body tr').forEach(row => {
         const desc = row.cells[3].textContent;
-        if (desc.includes('Started: No')) categories['Started on time']++;
-        if (desc.includes('Ended: No')) categories['End on time']++;
+        if (desc.includes('Started: Yes')) categories['Started on time']++;
+        if (desc.includes('Ended: Yes')) categories['End on time']++;
         if (desc.includes('Signal: Yes')) categories['Cuts in Signal']++;
         if (desc.includes('Satellite: Yes')) categories['Satellite Cut']++;
-        if (desc.includes('Audio: No')) categories['Audio Ok']++;
-        if (desc.includes('Batch: No')) categories['The Batch Coincidence']++;
+        if (desc.includes('Audio: Yes')) categories['Audio Ok']++;
+        if (desc.includes('Batch: Yes')) categories['The Batch Coincidence']++;
         if (desc.includes('Bottomline: Yes')) categories['Bottomline with Problems']++;
     });
 
