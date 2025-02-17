@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,11 @@
     <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
     <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
 </head>
-<body>  
+
+<body>
     <header>
         <img src="./Disney.png" alt="Disney Logo" class="head-img">
-       
+
     </header>
 
     <div class="sidebar" id="sidebar">
@@ -24,10 +26,10 @@
             <h2>Scheduling</h2>
             <div class="divider"></div>
             <ul id="menu-options" class="menu-options">
-                <li   data-option="week"><a  href="/week/week.html">Week</a></li>  
-                <li class="active" data-option="daily"><a  href="/daily/daily.html">Daily</a></li>
-                <li data-option="comparative"><a  href="/comparative/comparative.html">Comparative</a></li>
-                <li data-option="disney"><a  href="/disneyplus/disney.html">Disney+</a></li>
+                <li data-option="week"><a href="/week/week.html">Week</a></li>
+                <li class="active" data-option="daily"><a href="/daily/daily.html">Daily</a></li>
+                <li data-option="comparative"><a href="/comparative/comparative.html">Comparative</a></li>
+                <li data-option="disney"><a href="/disneyplus/disney.html">Disney+</a></li>
             </ul>
             <h2>Tasks</h2>
             <div class="divider"></div>
@@ -37,32 +39,33 @@
                 <li data-option="recording">Recording</li>
             </ul>
             <h2>Administrator</h2>
-<div class="divider"></div>
-<ul id="admin-options" class="menu-options">
-    <li data-option="recording">Recording
-        <ul class="submenu">
-            <li data-option="inputs">Inputs</li>
-            <li data-option="equipment">Equipment</li>
-            <li data-option="operator">Operator</li>
-        </ul>
-    </li>
-    <li data-option="ingest-tmk">Ingest Tmk
-        <!-- Submenú adicional de Ingest Tmk -->
-        <ul class="submenu">
-            <li data-option="grouping-type">Grouping type</li>
-        </ul>
-    </li>
-</ul>
-            
+            <div class="divider"></div>
+            <ul id="admin-options" class="menu-options">
+                <li data-option="recording">Recording
+                    <ul class="submenu">
+                        <li data-option="inputs">Inputs</li>
+                        <li data-option="equipment">Equipment</li>
+                        <li data-option="operator">Operator</li>
+                    </ul>
+                </li>
+                <li data-option="ingest-tmk">Ingest Tmk
+                    <!-- Submenú adicional de Ingest Tmk -->
+                    <ul class="submenu">
+                        <li data-option="grouping-type">Grouping type</li>
+                    </ul>
+                </li>
+            </ul>
+
         </nav>
     </div>
-    
+
 
     <main>
-        <div class="breadcrumb"> <button id="toggle-menu" onclick="toggleSidebar()"><</button>
-            <span>Scheduling</span> >
-            <a href="/index.html">Daily</a>
-            <button id="logout-button" class="logout-button">Log out</button>
+        <div class="breadcrumb"> <button id="toggle-menu" onclick="toggleSidebar()">
+                 </button>
+                    <span>Scheduling</span> >
+                    <a href="/index.html">Daily</a>
+                    <button id="logout-button" class="logout-button">Log out</button>
         </div>
 
         <div class="error-container">
@@ -75,4 +78,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

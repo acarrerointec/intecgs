@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Report</title>
+    
+    <!-- Estilos y bibliotecas -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="./Disney.png" alt="Disney Logo" class="head-img">
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <h2>Scheduling</h2>
+            <div class="divider"></div>
+            <ul id="menu-options" class="menu-options">
+
+                <li data-option="week"><a href="/week/week.html">Week</a></li>
+                <li data-option="daily"><a href="/daily/daily.html">Daily</a></li>
+                <li data-option="comparative"><a href="/comparative/comparative.html">Comparative</a></li>
+                <li data-option="disney"><a href="/disneyplus/disney.html">Disney+</a></li>
+            </ul>
+            <h2>Tasks</h2>
+            <div class="divider"></div>
+            <ul id="task-options" class="menu-options">
+                <li data-option="ingest">Ingest Tmk</li>
+                <li data-option="ingest">Ingest Edm</li>
+                <li data-option="recording">Recording</li>
+            </ul>
+            <h2>Graph</h2>
+            <div class="divider"></div>
+            <ul id="task-options" class="menu-options">
+                <li class="active" data-option="graph"><a href="/graphic/graph.html">Graph Report</a></li>
+            </ul>
+            <h2>Administrator</h2>
+            <div class="divider"></div>
+            <ul id="admin-options" class="menu-options">
+                <li data-option="recording">Recording
+                    <ul class="submenu">
+                        <li data-option="inputs">Inputs</li>
+                        <li data-option="equipment">Equipment</li>
+                        <li data-option="operator">Operator</li>
+                    </ul>
+                </li>
+                <li data-option="ingest-tmk">Ingest Tmk
+                    <!-- Submenú adicional de Ingest Tmk -->
+                    <ul class="submenu">
+                        <li data-option="grouping-type">Grouping type</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+    <main>
+        <div class="breadcrumb"> 
+            <button id="toggle-menu" onclick="toggleSidebar()"><</button>
+            <span>Graph</span> >
+            <a href="/graphic/graph.html">Report</a>
+            <button id="logout-button" class="logout-button">Log out</button>
+        </div>
+
+        <div class="search-section">
+            <div class="search-bar">
+                <!-- Filtros (igual que en tu código original) -->
+                <label for="date-from" class="network">Start date: </label>
+                <input type="date" id="date-from">
+                
+                <label for="date-to" class="network">End date: </label>
+                <input type="date" id="date-to">
+                
+                <label for="network">Feeds: </label>
+                <select id="network" class="network">
+                    <option value="select">Select options</option>
+                    <option value="0">All items are selected</option>
+                    <option value="1">706</option>
+                    <option value="2">315</option>
+                </select>
+    
+                <label for="feed" class="network">Network:</label>
+                <select id="feed">
+                    <option value="select">Select options</option>
+                    <option value="0">All items are selected</option>
+                    <option value="1">A</option>
+                    <option value="2">B</option>
+                </select>
+
+                <label for="emission-type" class="network">Emission Type:</label>
+                <select id="emission-type">
+                    <option value="select">Select options</option>
+                    <option value="live" class="emission-type-option live">Live</option>
+                    <option value="recorded" class="emission-type-option recorded">Recorded</option>
+                    <option value="replay" class="emission-type-option replay">Replay</option>
+                    <option value="delayed" class="emission-type-option delayed">Delayed</option>
+                    <option value="short-turnaround" class="emission-type-option short-turnaround">Short Turnaround</option>
+                </select>
+
+                <label for="program-status" class="network">Program Status:</label>
+                <select id="program-status">
+                    <option value="select">Select options</option>
+                    <option value="canceled" class="program-status-option canceled">Canceled</option>
+                    <option value="draft" class="program-status-option draft">Draft</option>
+                    <option value="approved" class="program-status-option approved">Approved</option>
+                    <option value="published" class="program-status-option published">Published</option>
+                </select>
+    
+                <button class="apply-button" onclick="applyFilters()">Apply</button>
+                <button class="clear-button" onclick="clearFilters()">Clear Filters</button>
+            </div>
+        </div>
+<!-- Chart for Program Status -->
+        <div>
+        <h2>Program Status</h2>
+        <canvas id="programStatusChart"></canvas>
+    </div>
+
+    <div>
+        <h2>Emission Type</h2>
+        <canvas id="emissionTypeChart"></canvas>
+    </div>
+    
+        </main>
+       
+    <!-- Chart for Emission Type
+        <div class="main-table">
+            <h3>Report Data</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Count</th>
+                        <th>Feed</th>
+                        <th>Network</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="reportTableBody"></tbody>
+            </table>
+        </div>
+ -->
+        <!-- Chart for Emission Type -->
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
